@@ -34,14 +34,14 @@ body {
   font-weight: 500;
 }
 
-.main__copy {
+.about__copy {
   font-size: 0.875rem;
   line-height: 1.375rem;
 }
-.main__copy--normal {
+.about__copy--normal {
   font-weight: normal;
 }
-.main__copy--bold {
+.about__copy--bold {
   font-weight: bold;
 }
 
