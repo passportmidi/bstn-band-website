@@ -31,6 +31,16 @@ body {
   }
 }
 
+.quote {
+  &__body {
+    @extend .heading--sub;
+    font-weight: bold;
+  }
+  &__source {
+    @extend .about__copy--bold;
+  }
+}
+
 .footer {
   &__copy {
     font-size: 0.875rem;

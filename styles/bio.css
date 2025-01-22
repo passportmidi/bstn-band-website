@@ -28,7 +28,7 @@ body {
   line-height: 2.75rem;
   font-weight: bold;
 }
-.heading--sub {
+.heading--sub, .quote__body {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 500;
@@ -41,10 +41,13 @@ body {
 .about__copy--normal {
   font-weight: normal;
 }
-.about__copy--bold {
+.about__copy--bold, .quote__source {
   font-weight: bold;
 }
 
+.quote__body {
+  font-weight: bold;
+}
 .footer__copy {
   font-size: 0.875rem;
   line-height: 1.25rem;
