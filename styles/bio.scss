@@ -1,7 +1,45 @@
 @use "./partials/fonts" as *;
+@use "./partials/mixins" as *;
 
 body {
-    font-family: 'Nunito Sans', sans-serif;
-    font-weight: normal;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: normal;
 }
 
+.heading {
+  &--page {
+    @include font-properties(3.75rem, 4.25rem, bold);
+  }
+  &--section {
+    @include font-properties(2.25rem, 2.75rem, bold);
+  }
+  &--sub {
+    @include font-properties(1.5rem, 2rem, 500);
+  }
+}
+
+.main {
+  &__copy {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    &--normal {
+      font-weight: normal;
+    }
+    &--bold {
+      font-weight: bold;
+    }
+  }
+}
+
+.footer {
+  &__copy {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    &--normal {
+      font-weight: normal;
+    }
+    &--bold {
+      font-weight: bold;
+    }
+  }
+}

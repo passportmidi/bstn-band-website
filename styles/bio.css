@@ -16,4 +16,42 @@
 body {
   font-family: "Nunito Sans", sans-serif;
   font-weight: normal;
+}
+
+.heading--page {
+  font-size: 3.75rem;
+  line-height: 4.25rem;
+  font-weight: bold;
+}
+.heading--section {
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+  font-weight: bold;
+}
+.heading--sub {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+.main__copy {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+.main__copy--normal {
+  font-weight: normal;
+}
+.main__copy--bold {
+  font-weight: bold;
+}
+
+.footer__copy {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.footer__copy--normal {
+  font-weight: normal;
+}
+.footer__copy--bold {
+  font-weight: bold;
 }/*# sourceMappingURL=bio.css.map */
