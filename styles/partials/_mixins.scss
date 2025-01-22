@@ -1,3 +1,10 @@
+@mixin display($display, $justify, $align, $direction) {
+    display: $display;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+  }
+
 @mixin font-properties($size, $height, $weight) {
     font-size: $size;
     line-height: $height;

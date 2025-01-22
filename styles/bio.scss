@@ -86,6 +86,17 @@ body {
   }
 }
 
+.gallery {
+  @include display(flex, space-between, center, row);
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  row-gap: 1rem;
+  padding-bottom: 2.25rem;
+  &__image {
+    width: 32%;
+  }
+}
+
 .footer {
   &__copy {
     font-size: 0.875rem;
