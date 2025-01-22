@@ -16,9 +16,16 @@ body {
 .stack {
   padding: 0rem 2.25rem;
   &--header,
-  &--footer {
+  &--footer,
+  &--hero {
     background-color: $bandsite-black;
     color: $white;
+  }
+  &--hero {
+    height: 0.5vh;
+    background-image: url("../assets/images/hero-bio.jpg");
+    background-position: center;
+    background-size: cover;
   }
   &--about {
     background-color: $white;

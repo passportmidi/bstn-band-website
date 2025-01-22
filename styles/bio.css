@@ -27,9 +27,15 @@ body {
 .stack {
   padding: 0rem 2.25rem;
 }
-.stack--header, .stack--footer {
+.stack--header, .stack--footer, .stack--hero {
   background-color: #323232;
   color: #fff;
+}
+.stack--hero {
+  height: 0.5vh;
+  background-image: url("../assets/images/hero-bio.jpg");
+  background-position: center;
+  background-size: cover;
 }
 .stack--about {
   background-color: #fff;
