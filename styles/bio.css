@@ -13,10 +13,37 @@
   src: url("../assets/fonts/NunitoSans-Bold.woff") format("woff"), url("../assets/fonts/NunitoSans-Bold.woff2") format("woff2");
   font-weight: bold;
 }
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: "Nunito Sans", sans-serif;
   font-weight: normal;
   color: #323232;
+}
+
+.stack {
+  padding: 0rem 2.25rem;
+}
+.stack--header, .stack--footer {
+  background-color: #323232;
+  color: #fff;
+}
+.stack--about {
+  background-color: #fff;
+}
+.stack--gallery {
+  background-color: #e1e1e1;
+}
+
+.header-nav__list {
+  list-style-type: none;
+}
+.header-nav__link {
+  color: #fff;
+  text-decoration: none;
 }
 
 .heading--page {

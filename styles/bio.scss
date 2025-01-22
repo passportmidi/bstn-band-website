@@ -1,11 +1,41 @@
 @use "./partials/fonts" as *;
 @use "./partials/mixins" as *;
-@use "./partials/colors" as *; 
+@use "./partials/colors" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: "Nunito Sans", sans-serif;
   font-weight: normal;
   color: $bandsite-black;
+}
+
+.stack {
+  padding: 0rem 2.25rem;
+  &--header,
+  &--footer {
+    background-color: $bandsite-black;
+    color: $white;
+  }
+  &--about {
+    background-color: $white;
+  }
+  &--gallery {
+    background-color: $mercury;
+  }
+}
+
+.header-nav {
+  &__list {
+    list-style-type: none;
+  }
+  &__link {
+    color: $white;
+    text-decoration: none;
+  }
 }
 
 .heading {
