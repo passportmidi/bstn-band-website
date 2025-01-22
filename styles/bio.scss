@@ -39,6 +39,7 @@ body {
 }
 
 .heading {
+  padding: 3rem 0rem 2.25rem 0rem;
   &--page {
     @include font-properties(3.75rem, 4.25rem, bold);
   }
@@ -54,6 +55,7 @@ body {
   &__copy {
     font-size: 0.875rem;
     line-height: 1.375rem;
+    padding-bottom: 2.25rem;
     &--normal {
       font-weight: normal;
     }
