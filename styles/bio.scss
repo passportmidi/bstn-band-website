@@ -98,14 +98,28 @@ body {
 }
 
 .footer {
+  &__contact {
+    @include display(flex, space-between, baseline, row);
+  }
   &__copy {
     font-size: 0.875rem;
     line-height: 1.25rem;
+    padding-bottom: 2.25rem;
     &--normal {
       font-weight: normal;
     }
     &--bold {
       font-weight: bold;
     }
+  }
+  &__title {
+    @include display(flex, left, baseline, row);
+  }
+  &__heading--section {
+    padding-right: 2.25rem;
+  }
+  &__socials {
+    @include display(flex, space-between, baseline, row);
+    width: 7rem;
   }
 }

@@ -106,13 +106,36 @@ body {
   width: 32%;
 }
 
+.footer__contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-direction: row;
+}
 .footer__copy {
   font-size: 0.875rem;
   line-height: 1.25rem;
+  padding-bottom: 2.25rem;
 }
 .footer__copy--normal {
   font-weight: normal;
 }
 .footer__copy--bold {
   font-weight: bold;
+}
+.footer__title {
+  display: flex;
+  justify-content: left;
+  align-items: baseline;
+  flex-direction: row;
+}
+.footer__heading--section {
+  padding-right: 2.25rem;
+}
+.footer__socials {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-direction: row;
+  width: 7rem;
 }/*# sourceMappingURL=bio.css.map */
