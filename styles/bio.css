@@ -33,9 +33,15 @@ body {
   color: #fff;
 }
 .stack--hero {
-  background-image: url("../assets/images/hero-bio.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  height: 50vh;
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/images/hero-bio.jpg");
   background-position: center;
   background-size: cover;
+  z-index: 0;
 }
 .stack--about {
   background-color: #fff;
