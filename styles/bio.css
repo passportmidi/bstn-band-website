@@ -32,6 +32,12 @@ body {
   background-color: #323232;
   color: #fff;
 }
+.stack--header {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: row;
+}
 .stack--hero {
   display: flex;
   justify-content: center;
@@ -50,12 +56,31 @@ body {
   background-color: #e1e1e1;
 }
 
+.header__logo {
+  padding: 2.25rem 0rem;
+}
+
+.header-nav {
+  margin: 0.3125rem;
+}
 .header-nav__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-direction: row;
   list-style-type: none;
+  padding: 2.25rem 3rem;
+  width: 16rem;
 }
 .header-nav__link {
   color: #fff;
   text-decoration: none;
+  height: 100%;
+  padding: 2.25rem 0rem;
+}
+.header-nav__link:active, .header-nav__link:hover {
+  font-weight: bold;
+  border-bottom: 0.3125rem solid #fff;
 }
 
 .heading {

@@ -22,6 +22,9 @@ body {
     background-color: $bandsite-black;
     color: $white;
   }
+  &--header {
+    @include display(flex, left, center, row);
+  }
   &--hero {
     @include display(flex, center, left, column);
     height: 50vh;
@@ -43,13 +46,29 @@ body {
   }
 }
 
+.header {
+  &__logo {
+    padding: 2.25rem 0rem;
+  }
+}
+
 .header-nav {
+  margin: .3125rem;
   &__list {
+    @include display(flex, space-between, baseline, row);
     list-style-type: none;
+    padding: 2.25rem 3rem;
+    width: 16rem;
   }
   &__link {
     color: $white;
     text-decoration: none;
+    height: 100%;
+    padding: 2.25rem 0rem;
+    &:active, &:hover {
+      font-weight: bold;
+      border-bottom: .3125rem solid $white;
+    }
   }
 }
 
