@@ -60,7 +60,15 @@ body {
 
 .about {
   padding: 0rem 5rem;
+  &__image {
+    width: 100%;
+    padding-bottom: 2.25rem;
+  }
+  &__description {
+    @include display(flex, space-between, left, row);
+  }
   &__copy {
+    width: 48%;
     font-size: 0.875rem;
     line-height: 1.375rem;
     padding-bottom: 2.25rem;
@@ -71,12 +79,10 @@ body {
       font-weight: bold;
     }
   }
-  &__image {
-    width: 100%;
-  }
 }
 
 .quote {
+  padding: .5rem 0rem;
   &__body {
     @extend .heading--sub;
     font-weight: bold;

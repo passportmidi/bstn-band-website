@@ -74,7 +74,18 @@ body {
 .about {
   padding: 0rem 5rem;
 }
+.about__image {
+  width: 100%;
+  padding-bottom: 2.25rem;
+}
+.about__description {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  flex-direction: row;
+}
 .about__copy {
+  width: 48%;
   font-size: 0.875rem;
   line-height: 1.375rem;
   padding-bottom: 2.25rem;
@@ -85,10 +96,10 @@ body {
 .about__copy--bold, .quote__source {
   font-weight: bold;
 }
-.about__image {
-  width: 100%;
-}
 
+.quote {
+  padding: 0.5rem 0rem;
+}
 .quote__body {
   font-weight: bold;
 }
