@@ -15,7 +15,7 @@ body {
 }
 
 .stack {
-  padding: 0rem 2.25rem;
+  padding: 0px 36px;
   &--header,
   &--footer,
   &--hero {
@@ -30,7 +30,7 @@ body {
     height: 50vh;
     // background-image: url("../assets/images/hero-bio.jpg");
     background-image: linear-gradient(
-        rgba(50, 50, 50, 0.5), 
+        rgba(50, 50, 50, 0.5),
         rgba(50, 50, 50, 0.5)
       ),
       url("../assets/images/hero-bio.jpg");
@@ -47,58 +47,68 @@ body {
 }
 
 .header {
+  &__contents {
+    display: flex;
+    margin-bottom: .25rem;
+  }
   &__logo {
-    padding: 2.25rem 0rem;
+    padding: 36px 0px;
   }
 }
 
 .header-nav {
-  margin: .3125rem;
   &__list {
+    height: 100%;
     @include display(flex, space-between, baseline, row);
     list-style-type: none;
-    padding: 2.25rem 3rem;
-    width: 16rem;
+    padding: 36px 48px;
+    width: 256px;
   }
   &__link {
     color: $white;
     text-decoration: none;
     height: 100%;
-    padding: 2.25rem 0rem;
-    &:active, &:hover {
+    padding: 36px 0px;
+    &:active,
+    &:hover {
       font-weight: bold;
-      border-bottom: .3125rem solid $white;
+      border-bottom: .25rem solid $white;
     }
   }
 }
 
+.divider {
+  height: .0625rem;
+  background-color: $mercury;
+}
+
 .heading {
-  padding: 3rem 0rem 2.25rem 0rem;
+  padding: 48px 0px 36px 0px;
   &--page {
-    @include font-properties(3.75rem, 4.25rem, bold);
+    @include font-properties(60px, 68px, bold);
   }
   &--section {
-    @include font-properties(2.25rem, 2.75rem, bold);
+    @include font-properties(36px, 44px, bold);
   }
   &--sub {
-    @include font-properties(1.5rem, 2rem, 500);
+    @include font-properties(24px, 32px, 500);
   }
 }
 
 .about {
-  padding: 0rem 5rem;
+  padding: 0px 80px;
   &__image {
     width: 100%;
-    padding-bottom: 2.25rem;
+    padding-bottom: 36px;
   }
   &__description {
     @include display(flex, space-between, left, row);
   }
   &__copy {
     width: 48%;
-    font-size: .875rem;
-    line-height: 1.375rem;
-    padding-bottom: 2.25rem;
+    font-size: 14px;
+    line-height: 22px;
+    padding-bottom: 36px;
     &--normal {
       font-weight: normal;
     }
@@ -109,7 +119,7 @@ body {
 }
 
 .quote {
-  padding: .5rem 0rem;
+  padding: 8px 0px;
   &__body {
     @extend .heading--sub;
     font-weight: bold;
@@ -122,9 +132,8 @@ body {
 .gallery {
   @include display(flex, space-between, center, row);
   flex-wrap: wrap;
-  box-sizing: border-box;
-  row-gap: 1rem;
-  padding-bottom: 2.25rem;
+  row-gap: 16px;
+  padding-bottom: 36px;
   &__image {
     width: 32%;
   }
@@ -135,9 +144,9 @@ body {
     @include display(flex, space-between, baseline, row);
   }
   &__copy {
-    font-size: .875rem;
-    line-height: 1.25rem;
-    padding-bottom: 2.25rem;
+    font-size: 14px;
+    line-height: 20px;
+    padding-bottom: 36px;
     &--normal {
       font-weight: normal;
     }
@@ -149,10 +158,10 @@ body {
     @include display(flex, left, baseline, row);
   }
   &__heading--section {
-    padding-right: 2.25rem;
+    padding-right: 36px;
   }
   &__socials {
     @include display(flex, space-between, baseline, row);
-    width: 7rem;
+    width: 112px;
   }
 }
