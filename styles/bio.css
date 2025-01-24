@@ -65,13 +65,12 @@ body {
   background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/images/hero-bio.jpg");
   background-position: center;
   background-size: cover;
-  z-index: 0;
 }
 .stack--about {
   background-color: #fff;
 }
 .stack--gallery {
-  background-color: #e1e1e1;
+  background-color: #fafafa;
 }
 
 .header__contents {
@@ -157,10 +156,17 @@ body {
   line-height: 2.75rem;
   font-weight: bold;
 }
-.heading--sub, .quote__body {
+.heading--sub {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 500;
+}
+@media (max-width: 767px) {
+  .heading--page {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: bold;
+  }
 }
 
 .about {
@@ -186,12 +192,25 @@ body {
 .about__copy--normal {
   font-weight: normal;
 }
-.about__copy--bold, .quote__source {
+.about__copy--bold {
   font-weight: bold;
 }
 @media (max-width: 767px) {
   .about {
     padding: 0rem;
+  }
+  .about__description {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    flex-direction: column;
+  }
+  .about__copy {
+    padding: var(--padding) 0;
+    width: 100%;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: normal;
   }
 }
 
@@ -199,8 +218,26 @@ body {
   padding: 0.5rem 0rem;
 }
 .quote__body {
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-weight: bold;
 }
+@media (min-width: 768px) {
+  .quote__source {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: bold;
+    padding-bottom: var(--padding);
+  }
+}
+@media (max-width: 767px) {
+  .quote__source {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: bold;
+  }
+}
+
 .gallery {
   display: flex;
   justify-content: space-between;

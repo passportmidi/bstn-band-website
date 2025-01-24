@@ -47,13 +47,12 @@ body {
       url("../assets/images/hero-bio.jpg");
     background-position: center;
     background-size: cover;
-    z-index: 0;
   }
   &--about {
     background-color: $white;
   }
   &--gallery {
-    background-color: $mercury;
+    background-color: $alabaster;
   }
 }
 
@@ -127,15 +126,11 @@ body {
   &--sub {
     @include font-properties(1.5rem, 2rem, 500);
   }
-  // @include mobile {
-  //   &--page,
-  //   &--section {
-  //     @include font-properties(1.5rem, 2rem, bold);
-  //   }
-  //   &--sub {
-  //     @include font-properties(0.875rem, 1.375rem, 600);
-  //   }
-  // }
+  @include mobile {
+    &--page {
+      @include font-properties(2.25rem, 2.75rem, bold);
+    }
+  }
 }
 
 .about {
@@ -160,17 +155,30 @@ body {
   }
   @include mobile {
     padding: 0rem;
+    &__description {
+      @include display(flex, space-between, left, column);
+    }
+    &__copy {
+      padding: var(--padding) 0;
+      width: 100%;
+      @include font-properties(1.4rem, 2rem, normal);
+    }
   }
 }
 
 .quote {
   padding: 0.5rem 0rem;
   &__body {
-    @extend .heading--sub;
-    font-weight: bold;
+    @include font-properties(1.5rem, 2rem, bold);
   }
   &__source {
-    @extend .about__copy--bold;
+    @include desktop-tablet {
+      @include font-properties(0.875rem, 1.375rem, bold);
+      padding-bottom: var(--padding); 
+    }
+    @include mobile {
+      @include font-properties(1.5rem, 2rem, bold);
+    }
   }
 }
 
