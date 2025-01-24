@@ -66,6 +66,11 @@ body {
   background-position: center;
   background-size: cover;
 }
+@media (max-width: 767px) {
+  .stack--hero {
+    height: 35vh;
+  }
+}
 .stack--about {
   background-color: #fff;
 }
@@ -135,6 +140,9 @@ body {
     width: -moz-available;
     width: stretch;
     padding: 1rem;
+  }
+  .header-nav__link {
+    font-size: 1.5rem;
   }
 }
 
@@ -249,6 +257,17 @@ body {
 }
 .gallery__image {
   width: 32%;
+}
+@media (max-width: 767px) {
+  .gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .gallery__image {
+    width: 100%;
+  }
 }
 
 .footer__contact {

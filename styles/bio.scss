@@ -39,7 +39,6 @@ body {
   &--hero {
     @include display(flex, center, left, column);
     height: 50vh;
-    // background-image: url("../assets/images/hero-bio.jpg");
     background-image: linear-gradient(
         rgba(50, 50, 50, 0.5),
         rgba(50, 50, 50, 0.5)
@@ -47,6 +46,9 @@ body {
       url("../assets/images/hero-bio.jpg");
     background-position: center;
     background-size: cover;
+    @include mobile {
+      height: 35vh;
+    }
   }
   &--about {
     background-color: $white;
@@ -106,6 +108,9 @@ body {
       text-align: center;
       width: stretch;
       padding: 1rem;
+    }
+    &__link {
+      font-size: 1.5rem;
     }
   }
 }
@@ -190,6 +195,12 @@ body {
   &__image {
     width: 32%;
   }
+  @include mobile {
+    @include display(flex, center, center, column);
+    &__image {
+      width: 100%;
+    }
+  }
 }
 
 .footer {
@@ -205,9 +216,6 @@ body {
     &--bold {
       font-weight: bold;
     }
-    // @include mobile {
-    //   @include font-properties(.8125rem, 1.125rem, normal);
-    // }
   }
   &__title {
     @include display(flex, left, baseline, row);
