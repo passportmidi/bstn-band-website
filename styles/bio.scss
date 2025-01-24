@@ -24,6 +24,10 @@ body {
   }
   &--header {
     @include display(flex, left, center, row);
+    @include mobile {
+      @include display(flex, left, center, column);
+      padding: 0rem;
+    }
   }
   &--hero {
     @include display(flex, center, left, column);
@@ -49,10 +53,19 @@ body {
 .header {
   &__contents {
     display: flex;
-    margin-bottom: .25rem;
+    @include mobile {
+      @include display(flex, left, center, column);
+      width: 100%;
+    }
   }
   &__logo {
     padding: 2.25rem 0rem;
+    margin-bottom: 0.25rem;
+    @include mobile {
+      padding: 2.25rem 0rem;
+      width: 35%;
+      margin: 0rem;
+    }
   }
 }
 
@@ -60,24 +73,39 @@ body {
   &__list {
     @include display(flex, space-between, baseline, row);
     list-style-type: none;
-    padding: 2.25rem 3rem;
+    padding: 0rem 3rem;
     width: 16rem;
   }
-  &__link {
-    color: $white;
-    text-decoration: none;
+  &__item {
     padding: 2.25rem 0rem;
     &--selected,
     &:active,
     &:hover {
       font-weight: bold;
-      border-bottom: .25rem solid $white;
+      border-bottom: 0.25rem solid $white;
+    }
+  }
+  &__link {
+    color: $white;
+    text-decoration: none;
+  }
+  @include mobile {
+    width: 100%;
+    &__list {
+      @include display(flex, space-evenly, baseline, row);
+      width: 100%;
+      padding: 0rem;
+    }
+    &__item {
+      text-align: center;
+      width: stretch;
+      padding: 1rem;
     }
   }
 }
 
 .divider {
-  height: .0625rem;
+  height: 0.0625rem;
   background-color: $mercury;
 }
 
@@ -105,7 +133,7 @@ body {
   }
   &__copy {
     width: 48%;
-    font-size: .875rem;
+    font-size: 0.875rem;
     line-height: 1.375rem;
     padding-bottom: 2.25rem;
     &--normal {
@@ -118,7 +146,7 @@ body {
 }
 
 .quote {
-  padding: .5rem 0rem;
+  padding: 0.5rem 0rem;
   &__body {
     @extend .heading--sub;
     font-weight: bold;
@@ -143,7 +171,7 @@ body {
     @include display(flex, space-between, baseline, row);
   }
   &__copy {
-    font-size: .875rem;
+    font-size: 0.875rem;
     line-height: 1.25rem;
     padding-bottom: 2.25rem;
     &--normal {
