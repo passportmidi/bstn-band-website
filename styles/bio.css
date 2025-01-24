@@ -252,11 +252,13 @@ body {
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  row-gap: 1rem;
+  gap: 1rem;
   padding-bottom: var(--padding);
 }
-.gallery__image {
-  width: 32%;
+@media (min-width: 768px) {
+  .gallery__image {
+    max-width: calc(33.33% - 1rem);
+  }
 }
 @media (max-width: 767px) {
   .gallery {
@@ -303,4 +305,17 @@ body {
   align-items: baseline;
   flex-direction: row;
   width: 7rem;
+}
+@media (max-width: 767px) {
+  .footer__title, .footer__contact {
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+  }
+  .footer__copy {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: normal;
+  }
 }/*# sourceMappingURL=bio.css.map */
