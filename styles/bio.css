@@ -21,12 +21,21 @@
 
 body {
   font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
   font-weight: normal;
   color: #323232;
+  --headline-padding: 3rem;
+  --padding: 2.25rem;
+}
+@media (max-width: 767px) {
+  body {
+    --headline-padding: 1.5rem;
+    --padding: 1rem;
+  }
 }
 
 .stack {
-  padding: 0rem 2.25rem;
+  padding: 0rem var(--padding);
 }
 .stack--header, .stack--footer, .stack--hero {
   background-color: #323232;
@@ -78,12 +87,12 @@ body {
   }
 }
 .header__logo {
-  padding: 2.25rem 0rem;
+  padding: var(--padding) 0rem;
   margin-bottom: 0.25rem;
 }
 @media (max-width: 767px) {
   .header__logo {
-    padding: 2.25rem 0rem;
+    padding: var(--padding) 0rem;
     width: 35%;
     margin: 0rem;
   }
@@ -95,11 +104,11 @@ body {
   align-items: baseline;
   flex-direction: row;
   list-style-type: none;
-  padding: 0rem 3rem;
+  padding: 0rem var(--headline-padding);
   width: 16rem;
 }
 .header-nav__item {
-  padding: 2.25rem 0rem;
+  padding: var(--padding) 0rem;
 }
 .header-nav__item--selected, .header-nav__item:active, .header-nav__item:hover {
   font-weight: bold;
@@ -136,7 +145,7 @@ body {
 }
 
 .heading {
-  padding: 3rem 0rem 2.25rem 0rem;
+  padding: var(--headline-padding) 0rem var(--padding) 0rem;
 }
 .heading--page {
   font-size: 3.75rem;
@@ -159,7 +168,7 @@ body {
 }
 .about__image {
   width: 100%;
-  padding-bottom: 2.25rem;
+  padding-bottom: var(--padding);
 }
 .about__description {
   display: flex;
@@ -171,13 +180,19 @@ body {
   width: 48%;
   font-size: 0.875rem;
   line-height: 1.375rem;
-  padding-bottom: 2.25rem;
+  font-weight: normal;
+  padding-bottom: var(--padding);
 }
 .about__copy--normal {
   font-weight: normal;
 }
 .about__copy--bold, .quote__source {
   font-weight: bold;
+}
+@media (max-width: 767px) {
+  .about {
+    padding: 0rem;
+  }
 }
 
 .quote {
@@ -193,7 +208,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   row-gap: 1rem;
-  padding-bottom: 2.25rem;
+  padding-bottom: var(--padding);
 }
 .gallery__image {
   width: 32%;
@@ -208,7 +223,8 @@ body {
 .footer__copy {
   font-size: 0.875rem;
   line-height: 1.25rem;
-  padding-bottom: 2.25rem;
+  font-weight: normal;
+  padding-bottom: var(--padding);
 }
 .footer__copy--normal {
   font-weight: normal;
@@ -223,7 +239,7 @@ body {
   flex-direction: row;
 }
 .footer__heading--section {
-  padding-right: 2.25rem;
+  padding-right: var(--padding);
 }
 .footer__socials {
   display: flex;

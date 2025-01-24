@@ -10,12 +10,19 @@
 
 body {
   font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
   font-weight: normal;
   color: $bandsite-black;
+  --headline-padding: 3rem;
+  --padding: 2.25rem;
+  @include mobile {
+    --headline-padding: 1.5rem;
+    --padding: 1rem;
+  }
 }
 
 .stack {
-  padding: 0rem 2.25rem;
+  padding: 0rem var(--padding);
   &--header,
   &--footer,
   &--hero {
@@ -59,10 +66,10 @@ body {
     }
   }
   &__logo {
-    padding: 2.25rem 0rem;
+    padding: var(--padding) 0rem;
     margin-bottom: 0.25rem;
     @include mobile {
-      padding: 2.25rem 0rem;
+      padding: var(--padding) 0rem;
       width: 35%;
       margin: 0rem;
     }
@@ -73,11 +80,11 @@ body {
   &__list {
     @include display(flex, space-between, baseline, row);
     list-style-type: none;
-    padding: 0rem 3rem;
+    padding: 0rem var(--headline-padding);
     width: 16rem;
   }
   &__item {
-    padding: 2.25rem 0rem;
+    padding: var(--padding) 0rem;
     &--selected,
     &:active,
     &:hover {
@@ -110,7 +117,7 @@ body {
 }
 
 .heading {
-  padding: 3rem 0rem 2.25rem 0rem;
+  padding: var(--headline-padding) 0rem var(--padding) 0rem;
   &--page {
     @include font-properties(3.75rem, 4.25rem, bold);
   }
@@ -120,28 +127,39 @@ body {
   &--sub {
     @include font-properties(1.5rem, 2rem, 500);
   }
+  // @include mobile {
+  //   &--page,
+  //   &--section {
+  //     @include font-properties(1.5rem, 2rem, bold);
+  //   }
+  //   &--sub {
+  //     @include font-properties(0.875rem, 1.375rem, 600);
+  //   }
+  // }
 }
 
 .about {
   padding: 0rem 5rem;
   &__image {
     width: 100%;
-    padding-bottom: 2.25rem;
+    padding-bottom: var(--padding);
   }
   &__description {
     @include display(flex, space-between, left, row);
   }
   &__copy {
     width: 48%;
-    font-size: 0.875rem;
-    line-height: 1.375rem;
-    padding-bottom: 2.25rem;
+    @include font-properties(0.875rem, 1.375rem, normal);
+    padding-bottom: var(--padding);
     &--normal {
       font-weight: normal;
     }
     &--bold {
       font-weight: bold;
     }
+  }
+  @include mobile {
+    padding: 0rem;
   }
 }
 
@@ -160,7 +178,7 @@ body {
   @include display(flex, space-between, center, row);
   flex-wrap: wrap;
   row-gap: 1rem;
-  padding-bottom: 2.25rem;
+  padding-bottom: var(--padding);
   &__image {
     width: 32%;
   }
@@ -171,21 +189,23 @@ body {
     @include display(flex, space-between, baseline, row);
   }
   &__copy {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    padding-bottom: 2.25rem;
+    @include font-properties(0.875rem, 1.25rem, normal);
+    padding-bottom: var(--padding);
     &--normal {
       font-weight: normal;
     }
     &--bold {
       font-weight: bold;
     }
+    // @include mobile {
+    //   @include font-properties(.8125rem, 1.125rem, normal);
+    // }
   }
   &__title {
     @include display(flex, left, baseline, row);
   }
   &__heading--section {
-    padding-right: 2.25rem;
+    padding-right: var(--padding);
   }
   &__socials {
     @include display(flex, space-between, baseline, row);
