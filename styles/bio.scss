@@ -22,7 +22,7 @@ body {
 }
 
 .stack {
-  padding: 0rem var(--padding);
+  padding: 0 var(--padding);
   &--header,
   &--footer,
   &--hero {
@@ -33,7 +33,7 @@ body {
     @include display(flex, left, center, row);
     @include mobile {
       @include display(flex, left, center, column);
-      padding: 0rem;
+      padding: 0;
     }
   }
   &--hero {
@@ -67,12 +67,12 @@ body {
     }
   }
   &__logo {
-    padding: var(--padding) 0rem;
+    padding: var(--padding) 0;
     margin-bottom: 0.25rem;
     @include mobile {
-      padding: var(--padding) 0rem;
+      padding: var(--padding) 0;
       width: 35%;
-      margin: 0rem;
+      margin: 0;
     }
   }
 }
@@ -81,11 +81,11 @@ body {
   &__list {
     @include display(flex, space-between, baseline, row);
     list-style-type: none;
-    padding: 0rem var(--headline-padding);
+    padding: 0 var(--headline-padding);
     width: 16rem;
   }
   &__item {
-    padding: var(--padding) 0rem;
+    padding: var(--padding) 0;
     &--selected,
     &:active,
     &:hover {
@@ -102,7 +102,7 @@ body {
     &__list {
       @include display(flex, space-evenly, baseline, row);
       width: 100%;
-      padding: 0rem;
+      padding: 0;
     }
     &__item {
       text-align: center;
@@ -121,7 +121,7 @@ body {
 }
 
 .heading {
-  padding: var(--headline-padding) 0rem var(--padding) 0rem;
+  padding: var(--headline-padding) 0 var(--padding) 0;
   &--page {
     @include font-properties(3.75rem, 4.25rem, bold);
   }
@@ -139,7 +139,7 @@ body {
 }
 
 .about {
-  padding: 0rem 5rem;
+  padding: 0 5rem;
   &__image {
     width: 100%;
     padding-bottom: var(--padding);
@@ -159,7 +159,7 @@ body {
     }
   }
   @include mobile {
-    padding: 0rem;
+    padding: 0;
     &__description {
       @include display(flex, space-between, left, column);
     }
@@ -172,7 +172,7 @@ body {
 }
 
 .quote {
-  padding: 0.5rem 0rem;
+  padding: 0.5rem 0;
   &__body {
     @include font-properties(1.5rem, 2rem, bold);
   }
@@ -222,6 +222,7 @@ body {
     }
   }
   &__title {
+    width: max-content;
     @include display(flex, left, baseline, row);
   }
   &__heading--section {
@@ -236,10 +237,27 @@ body {
     &__contact {
       @include display(flex, center, left, column);
     }
+    &__heading--section {
+      padding-right: 0;
+    }
+    &__title, 
+    &__socials,
     &__copy {
-      // padding: var(--padding) 0;
-      // width: 100%;
+      padding: var(--padding) 0;
+    }
+    &__copy {
       @include font-properties(1.4rem, 2rem, normal);
+      &--bold {
+        font-weight: bold;
+      }
+    }
+    &__socials {
+      // width: 10rem;
+      width: 90%;
+      @include display(flex, space-between, center, row);
+    }
+    &__icon {
+      height: 2.25rem;
     }
   }
 }

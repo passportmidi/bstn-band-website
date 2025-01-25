@@ -35,7 +35,7 @@ body {
 }
 
 .stack {
-  padding: 0rem var(--padding);
+  padding: 0 var(--padding);
 }
 .stack--header, .stack--footer, .stack--hero {
   background-color: #323232;
@@ -53,7 +53,7 @@ body {
     justify-content: left;
     align-items: center;
     flex-direction: column;
-    padding: 0rem;
+    padding: 0;
   }
 }
 .stack--hero {
@@ -91,14 +91,14 @@ body {
   }
 }
 .header__logo {
-  padding: var(--padding) 0rem;
+  padding: var(--padding) 0;
   margin-bottom: 0.25rem;
 }
 @media (max-width: 767px) {
   .header__logo {
-    padding: var(--padding) 0rem;
+    padding: var(--padding) 0;
     width: 35%;
-    margin: 0rem;
+    margin: 0;
   }
 }
 
@@ -108,11 +108,11 @@ body {
   align-items: baseline;
   flex-direction: row;
   list-style-type: none;
-  padding: 0rem var(--headline-padding);
+  padding: 0 var(--headline-padding);
   width: 16rem;
 }
 .header-nav__item {
-  padding: var(--padding) 0rem;
+  padding: var(--padding) 0;
 }
 .header-nav__item--selected, .header-nav__item:active, .header-nav__item:hover {
   font-weight: bold;
@@ -132,7 +132,7 @@ body {
     align-items: baseline;
     flex-direction: row;
     width: 100%;
-    padding: 0rem;
+    padding: 0;
   }
   .header-nav__item {
     text-align: center;
@@ -152,7 +152,7 @@ body {
 }
 
 .heading {
-  padding: var(--headline-padding) 0rem var(--padding) 0rem;
+  padding: var(--headline-padding) 0 var(--padding) 0;
 }
 .heading--page {
   font-size: 3.75rem;
@@ -178,7 +178,7 @@ body {
 }
 
 .about {
-  padding: 0rem 5rem;
+  padding: 0 5rem;
 }
 .about__image {
   width: 100%;
@@ -205,7 +205,7 @@ body {
 }
 @media (max-width: 767px) {
   .about {
-    padding: 0rem;
+    padding: 0;
   }
   .about__description {
     display: flex;
@@ -223,7 +223,7 @@ body {
 }
 
 .quote {
-  padding: 0.5rem 0rem;
+  padding: 0.5rem 0;
 }
 .quote__body {
   font-size: 1.5rem;
@@ -291,6 +291,8 @@ body {
   font-weight: bold;
 }
 .footer__title {
+  width: -moz-max-content;
+  width: max-content;
   display: flex;
   justify-content: left;
   align-items: baseline;
@@ -313,9 +315,28 @@ body {
     align-items: left;
     flex-direction: column;
   }
+  .footer__heading--section {
+    padding-right: 0;
+  }
+  .footer__title, .footer__socials, .footer__copy {
+    padding: var(--padding) 0;
+  }
   .footer__copy {
     font-size: 1.4rem;
     line-height: 2rem;
     font-weight: normal;
+  }
+  .footer__copy--bold {
+    font-weight: bold;
+  }
+  .footer__socials {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  .footer__icon {
+    height: 2.25rem;
   }
 }/*# sourceMappingURL=bio.css.map */
