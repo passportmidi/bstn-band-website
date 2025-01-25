@@ -15,6 +15,7 @@ body {
   color: $bandsite-black;
   --headline-padding: 3rem;
   --padding: 2.25rem;
+
   @include mobile {
     --headline-padding: 1.5rem;
     --padding: 1rem;
@@ -24,8 +25,8 @@ body {
 .stack {
   padding: 0 var(--padding);
   &--header,
-  &--footer,
-  &--hero {
+  &--hero,
+  &--footer {
     background-color: $bandsite-black;
     color: $white;
   }
@@ -55,6 +56,9 @@ body {
   }
   &--gallery {
     background-color: $alabaster;
+  }
+  &--footer {
+    position: relative;
   }
 }
 
@@ -232,10 +236,21 @@ body {
     @include display(flex, space-between, baseline, row);
     width: 7rem;
   }
+  &__logo {
+    padding: var(--padding) 0;
+  }
+  @include desktop-tablet {
+    &__logo {
+      padding-top: 4rem;
+      position: absolute;
+      top: 0%;
+      left: 80%;
+    }
+  }
   @include mobile {
     &__title,
     &__contact {
-      @include display(flex, center, left, column);
+      @include display(flex, center, start, column);
     }
     &__heading--section {
       padding-right: 0;
@@ -258,6 +273,14 @@ body {
     }
     &__icon {
       height: 2.25rem;
+    }
+    &__copyright {
+      @include display(flex, center, start, column);
+      padding-top: 4rem;
+      padding-bottom: 2.25rem;
+    }
+    &__logo {
+      width: 13.5rem;
     }
   }
 }

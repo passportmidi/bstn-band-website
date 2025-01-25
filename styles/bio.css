@@ -37,7 +37,7 @@ body {
 .stack {
   padding: 0 var(--padding);
 }
-.stack--header, .stack--footer, .stack--hero {
+.stack--header, .stack--hero, .stack--footer {
   background-color: #323232;
   color: #fff;
 }
@@ -76,6 +76,9 @@ body {
 }
 .stack--gallery {
   background-color: #fafafa;
+}
+.stack--footer {
+  position: relative;
 }
 
 .header__contents {
@@ -308,11 +311,22 @@ body {
   flex-direction: row;
   width: 7rem;
 }
+.footer__logo {
+  padding: var(--padding) 0;
+}
+@media (min-width: 768px) {
+  .footer__logo {
+    padding-top: 4rem;
+    position: absolute;
+    top: 0%;
+    left: 80%;
+  }
+}
 @media (max-width: 767px) {
   .footer__title, .footer__contact {
     display: flex;
     justify-content: center;
-    align-items: left;
+    align-items: start;
     flex-direction: column;
   }
   .footer__heading--section {
@@ -338,5 +352,16 @@ body {
   }
   .footer__icon {
     height: 2.25rem;
+  }
+  .footer__copyright {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    padding-top: 4rem;
+    padding-bottom: 2.25rem;
+  }
+  .footer__logo {
+    width: 13.5rem;
   }
 }/*# sourceMappingURL=bio.css.map */
