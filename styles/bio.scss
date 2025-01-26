@@ -32,10 +32,6 @@ body {
   }
   &--header {
     @include display(flex, left, center, row);
-    @include mobile {
-      @include display(flex, left, center, column);
-      padding: 0;
-    }
   }
   &--hero {
     @include display(flex, center, left, column);
@@ -47,9 +43,6 @@ body {
       url("../assets/images/hero-bio.jpg");
     background-position: center;
     background-size: cover;
-    @include mobile {
-      height: 35vh;
-    }
   }
   &--about {
     background-color: $white;
@@ -60,28 +53,41 @@ body {
   &--footer {
     position: relative;
   }
+  @include desktop {
+    padding: 0 7.875rem;
+  }
+  @include mobile {
+    &--header {
+      @include display(flex, left, center, column);
+      padding: 0;
+    }
+    &--hero {
+      height: 35vh;
+    }
+  }
 }
 
 .header {
   &__contents {
     display: flex;
-    @include mobile {
-      @include display(flex, left, center, column);
-      width: 100%;
-    }
   }
   &__logo {
     padding: var(--padding) 0;
-    margin-bottom: 0.25rem;
-    @include mobile {
-      padding: var(--padding) 0;
-      width: 35%;
+  }
+  @include mobile {
+    &__contents {
+      @include display(flex, left, center, column);
+      width: 100%;
+    }
+    &__logo {
+      padding-top: 2.25rem;
       margin: 0;
+      width: 13.5rem;
     }
   }
 }
 
-.header-nav {
+.navigation {
   &__list {
     @include display(flex, space-between, baseline, row);
     list-style-type: none;
@@ -171,6 +177,12 @@ body {
       padding: var(--padding) 0;
       width: 100%;
       @include font-properties(1.4rem, 2rem, normal);
+      &--first {
+        padding-bottom: 2.25rem;
+      }
+      &--second {
+        padding-top: 2.25rem;
+      }
     }
   }
 }
@@ -183,7 +195,6 @@ body {
   &__source {
     @include desktop-tablet {
       @include font-properties(0.875rem, 1.375rem, bold);
-      padding-bottom: var(--padding);
     }
     @include mobile {
       @include font-properties(1.5rem, 2rem, bold);
@@ -208,8 +219,6 @@ body {
     }
   }
 }
-
-// TODO: positioning or flexbox order property for bandsite logo in footer
 
 .footer {
   &__contact {
@@ -248,14 +257,14 @@ body {
     }
   }
   @include mobile {
+    &__heading--section {
+      padding-right: 0;
+    }
     &__title,
     &__contact {
       @include display(flex, center, start, column);
     }
-    &__heading--section {
-      padding-right: 0;
-    }
-    &__title, 
+    &__title,
     &__socials,
     &__copy {
       padding: var(--padding) 0;
