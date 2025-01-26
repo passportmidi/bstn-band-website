@@ -10,15 +10,15 @@
 
 body {
   font-family: "Nunito Sans", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: normal;
   color: $bandsite-black;
-  --headline-padding: 3rem;
-  --padding: 2.25rem;
+  --headline-padding: 48px;
+  --padding: 36px;
 
   @include mobile {
-    --headline-padding: 1.5rem;
-    --padding: 1rem;
+    --headline-padding: 24px;
+    --padding: 16px;
   }
 }
 
@@ -54,7 +54,7 @@ body {
     position: relative;
   }
   @include desktop {
-    padding: 0 7.875rem;
+    padding: 0 126px;
   }
   @include mobile {
     &--header {
@@ -80,9 +80,9 @@ body {
       width: 100%;
     }
     &__logo {
-      padding-top: 2.25rem;
+      padding-top: 36px;
       margin: 0;
-      width: 13.5rem;
+      width: 216px;
     }
   }
 }
@@ -92,7 +92,7 @@ body {
     @include display(flex, space-between, baseline, row);
     list-style-type: none;
     padding: 0 var(--headline-padding);
-    width: 16rem;
+    width: 256px;
   }
   &__item {
     padding: var(--padding) 0;
@@ -100,7 +100,7 @@ body {
     &:active,
     &:hover {
       font-weight: bold;
-      border-bottom: 0.25rem solid $white;
+      border-bottom: 4px solid $white;
     }
   }
   &__link {
@@ -117,39 +117,39 @@ body {
     &__item {
       text-align: center;
       width: stretch;
-      padding: 1rem;
+      padding: 16px;
     }
     &__link {
-      font-size: 1.5rem;
+      font-size: 24px;
     }
   }
 }
 
 .divider {
-  height: 0.0625rem;
+  height: 1px;
   background-color: $mercury;
 }
 
 .heading {
   padding: var(--headline-padding) 0 var(--padding) 0;
   &--page {
-    @include font-properties(3.75rem, 4.25rem, bold);
+    @include font-properties(60px, 68px, bold);
   }
   &--section {
-    @include font-properties(2.25rem, 2.75rem, bold);
+    @include font-properties(36px, 44px, bold);
   }
   &--sub {
-    @include font-properties(1.5rem, 2rem, 500);
+    @include font-properties(24px, 32px, 500);
   }
   @include mobile {
     &--page {
-      @include font-properties(2.25rem, 2.75rem, bold);
+      @include font-properties(36px, 44px, bold);
     }
   }
 }
 
 .about {
-  padding: 0 5rem;
+  padding: 0 80px;
   &__image {
     width: 100%;
     padding-bottom: var(--padding);
@@ -159,7 +159,7 @@ body {
   }
   &__copy {
     width: 48%;
-    @include font-properties(0.875rem, 1.375rem, normal);
+    @include font-properties(14px, 22px, normal);
     padding-bottom: var(--padding);
     &--normal {
       font-weight: normal;
@@ -176,28 +176,28 @@ body {
     &__copy {
       padding: var(--padding) 0;
       width: 100%;
-      @include font-properties(1.4rem, 2rem, normal);
+      @include font-properties(22.4px, 32px, normal);
       &--first {
-        padding-bottom: 2.25rem;
+        padding-bottom: 36px;
       }
       &--second {
-        padding-top: 2.25rem;
+        padding-top: 36px;
       }
     }
   }
 }
 
 .quote {
-  padding: 0.5rem 0;
+  padding: 8px 0;
   &__body {
-    @include font-properties(1.5rem, 2rem, bold);
+    @include font-properties(24px, 32px, bold);
   }
   &__source {
     @include desktop-tablet {
-      @include font-properties(0.875rem, 1.375rem, bold);
+      @include font-properties(14px, 22px, bold);
     }
     @include mobile {
-      @include font-properties(1.5rem, 2rem, bold);
+      @include font-properties(24px, 32px, bold);
     }
   }
 }
@@ -205,11 +205,21 @@ body {
 .gallery {
   @include display(flex, space-between, center, row);
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 16px;
   padding-bottom: var(--padding);
+  @include desktop {
+    &__image {
+      filter: grayscale(100%);
+      &:hover {
+        filter: none;
+      }
+    }
+    /* only including grayscale on desktop because
+     it's not really possible to hover on touchscreen devices */
+  }
   @include desktop-tablet {
     &__image {
-      max-width: calc(33.33% - 1rem);
+      max-width: calc(33.33% - 16px);
     }
   }
   @include mobile {
@@ -225,7 +235,7 @@ body {
     @include display(flex, space-between, baseline, row);
   }
   &__copy {
-    @include font-properties(0.875rem, 1.25rem, normal);
+    @include font-properties(14px, 20px, normal);
     padding-bottom: var(--padding);
     &--normal {
       font-weight: normal;
@@ -243,14 +253,18 @@ body {
   }
   &__socials {
     @include display(flex, space-between, baseline, row);
-    width: 7rem;
+    width: 112px;
+  }
+  &__link {
+    text-decoration: none;
+    color: $white;
   }
   &__logo {
     padding: var(--padding) 0;
   }
   @include desktop-tablet {
     &__logo {
-      padding-top: 4rem;
+      padding-top: 64px;
       position: absolute;
       top: 0%;
       left: 80%;
@@ -270,26 +284,25 @@ body {
       padding: var(--padding) 0;
     }
     &__copy {
-      @include font-properties(1.4rem, 2rem, normal);
+      @include font-properties(22.4px, 32px, normal);
       &--bold {
         font-weight: bold;
       }
     }
     &__socials {
-      // width: 10rem;
       width: 90%;
       @include display(flex, space-between, center, row);
     }
     &__icon {
-      height: 2.25rem;
+      height: 36px;
     }
     &__copyright {
       @include display(flex, center, start, column);
-      padding-top: 4rem;
-      padding-bottom: 2.25rem;
+      padding-top: 64px;
+      padding-bottom: 36px;
     }
     &__logo {
-      width: 13.5rem;
+      width: 216px;
     }
   }
 }
