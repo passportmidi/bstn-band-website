@@ -138,26 +138,28 @@
         <h2 class="heading heading--section form__heading--section">
           Join the Conversation
         </h2>
-        <form id="form__comment">
-          <label class="form__title">
-            Name
-            <input
-              type="text"
-              class="form__input--name"
-              name="nameInput"
-              placeholder="Enter your name"
-            />
-          </label>
-          <label class="form__title">
-            Comment
-            <input
-              type="textarea"
-              class="form__input--comment"
-              name="commentInput"
-              placeholder="Add a new comment"
-            />
-          </label>
-          <button type="submit">Comment</button>
+        <form id="formComment" class="form">
+          <div class="form__section">
+          <label for="nameInput" class="form__label"> Name</label>
+          <input
+            type="text"
+            id="nameInput"
+            class="form__input form__input--name"
+            name="nameInput"
+            placeholder="Enter your name"
+          />
+          </div>
+          <div class="form__section">
+          <label for="commentInput" class="form__label"> Comment</label>
+          <input
+            type="textarea"
+            id="commentInput"
+            class="form__input form__input--comment"
+            name="commentInput"
+            placeholder="Add a new comment"
+          />
+          </div>
+          <button class="form__button" type="submit">Comment</button>
         </form>
       </section>
     </main>
