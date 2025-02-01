@@ -70,7 +70,7 @@ body {
     background-size: cover;
   }
   &--about,
-  &--form {
+  &--comments {
     background-color: $white;
   }
   &--gallery {
@@ -257,7 +257,17 @@ body {
 }
 
 .form {
-  @include display(flex, center, left, column);
+  @include display(flex, center, stretch, column);
+  flex: 1;
+  &__container {
+    @include display(flex, center, start, row);
+  }
+  &__avatar {
+    margin-top: 2.25rem;
+    background-image: url(../assets/images/Mohan-muruge.jpg);
+    background-size: cover;
+    background-position: center;
+  }
   &__input {
     border-radius: 0.25rem;
     font-family: "Nunito Sans", sans-serif;
@@ -272,7 +282,7 @@ body {
       color: $bandsite-black;
     }
     &::active {
-      border: .0625rem solid $bandsite-black;
+      border: 0.0625rem solid $bandsite-black;
     }
   }
   &__section,
@@ -288,11 +298,37 @@ body {
     font-size: 0.75rem;
   }
   @include desktop-tablet {
-    padding: 0 5rem var(--padding) 5rem;
+    &__container {
+      padding: 0 5rem;
+    }
     &__button {
       align-self: flex-end;
     }
   }
+}
+
+.comment {
+  &__container {
+    padding: 0 5rem var(--padding) 5rem;
+  }
+  &__area {
+    @include display(flex, left, start, row);
+    padding: var(--padding) 0;
+    border-top: 0.0625rem solid $mercury;
+    border-bottom: 0.0625rem solid $mercury;
+  }
+  &__header {
+    @include display(flex, space-between, center, row);
+  }
+}
+
+.avatar {
+  background-color: $mercury;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  flex: none;
+  margin-right: 1rem;
 }
 
 .footer {

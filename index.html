@@ -134,32 +134,54 @@
           />
         </section>
       </section>
-      <section class="stack stack--form">
+      <section class="stack stack--comments">
         <h2 class="heading heading--section form__heading--section">
           Join the Conversation
         </h2>
-        <form id="formComment" class="form">
-          <div class="form__section">
-          <label for="nameInput" class="label form__label"> Name</label>
-          <input
-            type="text"
-            id="nameInput"
-            class="form__input form__input-name"
-            name="nameInput"
-            placeholder="Enter your name"
-          />
-          </div>
-          <div class="form__section">
-          <label for="commentInput" class="label form__label"> Comment</label>
-          <textarea
-            id="commentInput"
-            class="form__input form__input-comment"
-            name="commentInput"
-            placeholder="Add a new comment"
-          /></textarea>
-          </div>
-          <button class="button form__button" type="submit">Comment</button>
-        </form>
+        <section class="form__container">
+          <div class="avatar form__avatar"></div>
+          <form id="formComment" class="form">
+            <div class="form__section">
+              <label for="nameInput" class="label form__label"> Name</label>
+              <input
+                type="text"
+                id="nameInput"
+                class="form__input form__input-name"
+                name="nameInput"
+                placeholder="Enter your name"
+              />
+            </div>
+            <div class="form__section">
+              <label for="commentInput" class="label form__label">
+                Comment</label
+              >
+              <textarea
+                id="commentInput"
+                class="form__input form__input-comment"
+                name="commentInput"
+                placeholder="Add a new comment"
+              ></textarea>
+            </div>
+            <button class="button form__button" type="submit">Comment</button>
+          </form>
+        </section>
+        <section class="comment__container">
+          <section class="comment__area">
+            <div class="avatar comment__avatar"></div>
+            <div class="comment__body">
+              <div class="comment__header">
+                <p class="comment__user">Victor Pinto</p>
+                <p class="comment__date">11/02/2023</p>
+              </div>
+              <p class="comment__content">
+                This is art. This is inexplicable magic expressed in the purest
+                way, everything that makes up this majestic work deserves
+                reverence. Let us appreciate this for what it is and what it
+                contains.
+              </p>
+            </div>
+          </section>
+        </section>
       </section>
     </main>
     <footer class="stack stack--footer">
