@@ -308,9 +308,6 @@ body {
 }
 
 .comment {
-  &__container {
-    padding: 0 5rem var(--padding) 5rem;
-  }
   &__area {
     @include display(flex, left, start, row);
     padding: var(--padding) 0;
@@ -319,6 +316,23 @@ body {
   }
   &__header {
     @include display(flex, space-between, center, row);
+    margin-bottom: 0.5rem;
+  }
+  &__user {
+    font-weight: bold;
+  }
+  &__date {
+    color: $silver;
+  }
+  @include desktop-tablet {
+    &__container {
+      padding: 0 5rem var(--padding) 5rem;
+    }
+    @include mobile {
+      &__container {
+        padding-bottom: var(--padding);
+      }
+    }
   }
 }
 

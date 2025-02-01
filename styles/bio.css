@@ -381,9 +381,6 @@ body {
   }
 }
 
-.comment__container {
-  padding: 0 5rem var(--padding) 5rem;
-}
 .comment__area {
   display: flex;
   justify-content: left;
@@ -398,6 +395,23 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  margin-bottom: 0.5rem;
+}
+.comment__user {
+  font-weight: bold;
+}
+.comment__date {
+  color: #afafaf;
+}
+@media (min-width: 768px) {
+  .comment__container {
+    padding: 0 5rem var(--padding) 5rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 767px) {
+  .comment__container {
+    padding-bottom: var(--padding);
+  }
 }
 
 .avatar {
