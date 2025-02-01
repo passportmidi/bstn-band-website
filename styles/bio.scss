@@ -6,10 +6,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 body {
-  font-family: "Nunito Sans", sans-serif;
   font-size: 16px;
   font-weight: normal;
   color: $bandsite-black;
@@ -20,6 +20,31 @@ body {
     --headline-padding: 1.5rem;
     --padding: 1rem;
   }
+}
+
+.label,
+.button {
+  line-height: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.label {
+  @include desktop-tablet {
+    font-size: 0.75rem;
+  }
+  @include mobile {
+    font-size: 0.625rem;
+  }
+}
+
+.button {
+  font-size: 1.125rem;
+  background-color: $bandsite-black;
+  color: $white;
+  border-radius: 0.25rem;
+  padding: 1rem 2.25rem;
+  border: none;
 }
 
 .stack {
@@ -44,7 +69,8 @@ body {
     background-position: center;
     background-size: cover;
   }
-  &--about, &--form {
+  &--about,
+  &--form {
     background-color: $white;
   }
   &--gallery {
@@ -100,7 +126,7 @@ body {
     &:active,
     &:hover {
       font-weight: bold;
-      border-bottom: .25rem solid $white;
+      border-bottom: 0.25rem solid $white;
     }
   }
   &__link {
@@ -126,7 +152,7 @@ body {
 }
 
 .divider {
-  height: .0625rem;
+  height: 0.0625rem;
   background-color: $mercury;
 }
 
@@ -159,7 +185,7 @@ body {
   }
   &__copy {
     width: 48%;
-    @include font-properties(.875rem, 1.375rem, normal);
+    @include font-properties(0.875rem, 1.375rem, normal);
     padding-bottom: var(--padding);
     &--normal {
       font-weight: normal;
@@ -188,13 +214,13 @@ body {
 }
 
 .quote {
-  padding: .5rem 0;
+  padding: 0.5rem 0;
   &__body {
     @include font-properties(1.5rem, 2rem, bold);
   }
   &__source {
     @include desktop-tablet {
-      @include font-properties(.875rem, 1.375rem, bold);
+      @include font-properties(0.875rem, 1.375rem, bold);
     }
     @include mobile {
       @include font-properties(1.5rem, 2rem, bold);
@@ -232,22 +258,25 @@ body {
 
 .form {
   @include display(flex, center, left, column);
-  &__input, &__button {
-    padding: 1rem;
-    border-radius: .25rem;
-    font-family: "Nunito Sans", sans-serif;
-  }
   &__input {
+    border-radius: 0.25rem;
+    font-family: "Nunito Sans", sans-serif;
     padding: 1rem;
-    border: 1px solid $mercury;
+    border: 0.0625rem solid $mercury;
     background-color: $alabaster;
+    &-comment {
+      height: 5rem;
+      resize: none;
+    }
+    &::placeholder {
+      color: $bandsite-black;
+    }
+    &::active {
+      border: .0625rem solid $bandsite-black;
+    }
   }
+  &__section,
   &__button {
-    background-color: $bandsite-black;
-    color: $white;
-    text-transform: uppercase;
-  }
-  &__section, &__button {
     margin: 1rem 0;
   }
   &__section {
@@ -256,6 +285,7 @@ body {
   &__label {
     color: $silver;
     text-transform: uppercase;
+    font-size: 0.75rem;
   }
   @include desktop-tablet {
     padding: 0 5rem var(--padding) 5rem;
@@ -270,7 +300,7 @@ body {
     @include display(flex, space-between, baseline, row);
   }
   &__copy {
-    @include font-properties(.875rem, 1.25rem, normal);
+    @include font-properties(0.875rem, 1.25rem, normal);
     padding-bottom: var(--padding);
     &--normal {
       font-weight: normal;
