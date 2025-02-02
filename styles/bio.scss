@@ -319,6 +319,9 @@ body {
       border-bottom: 0.0625rem solid $mercury;
     }
   }
+  &__body {
+    width: 100%;
+  }
   &__header {
     @include display(flex, space-between, center, row);
     margin-bottom: 0.5rem;

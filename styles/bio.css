@@ -395,6 +395,9 @@ body {
 .comment__area:last-child {
   border-bottom: 0.0625rem solid #e1e1e1;
 }
+.comment__body {
+  width: 100%;
+}
 .comment__header {
   display: flex;
   justify-content: space-between;

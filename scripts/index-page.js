@@ -1,3 +1,5 @@
+// Comment generation
+
 const comments = [
   {
     user: "Victor Pinto",
@@ -55,22 +57,33 @@ function createParagraph(className, text) {
   return par;
 }
 
-comments.forEach(displayComment);
+function render() {
+  commentContainer.replaceChildren();
+  comments.forEach(displayComment);
+}
 
-/*<section class="comment__container">
-    <section class="comment__area">
-      <div class="avatar comment__avatar"></div>
-      <div class="comment__body">
-        <div class="comment__header">
-            <p class="comment__user">Victor Pinto</p>
-            <p class="comment__date">11/02/2023</p>
-        </div>
-        <p class="comment__content">
-            This is art. This is inexplicable magic expressed in the purest
-            way, everything that makes up this majestic work deserves
-            reverence. Let us appreciate this for what it is and what it
-            contains.
-        </p>
-      </div>
-    </section>
-  </section> */
+render();
+
+// Comment submission
+
+const form = document.getElementById("commentForm");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  let today = new Date();
+
+  const comment = {
+    user: e.target.nameInput.value,
+    date: new Intl.DateTimeFormat("en-US", {
+      month: "2-digit",
+      day: "2-digit",
+      year: "numeric",
+    }).format(today),
+    content: e.target.commentInput.value,
+  };
+
+  comments.push(comment);
+  render();
+  form.reset();
+});
