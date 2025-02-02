@@ -87,6 +87,9 @@ body {
 .stack--about, .stack--comments {
   background-color: #fff;
 }
+.stack--comments {
+  padding-bottom: var(--padding);
+}
 .stack--gallery {
   background-color: #fafafa;
 }
@@ -388,6 +391,8 @@ body {
   flex-direction: row;
   padding: var(--padding) 0;
   border-top: 0.0625rem solid #e1e1e1;
+}
+.comment__area:last-child {
   border-bottom: 0.0625rem solid #e1e1e1;
 }
 .comment__header {

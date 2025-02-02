@@ -73,6 +73,9 @@ body {
   &--comments {
     background-color: $white;
   }
+  &--comments {
+    padding-bottom: var(--padding);
+  }
   &--gallery {
     background-color: $alabaster;
   }
@@ -312,7 +315,9 @@ body {
     @include display(flex, left, start, row);
     padding: var(--padding) 0;
     border-top: 0.0625rem solid $mercury;
-    border-bottom: 0.0625rem solid $mercury;
+    &:last-child {
+      border-bottom: 0.0625rem solid $mercury;
+    }
   }
   &__header {
     @include display(flex, space-between, center, row);

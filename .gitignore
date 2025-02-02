@@ -4,3 +4,4 @@ BandSite-Package-Sprint-2/
 
 #Ignore scss map files
 *.css.map
+*.code-workspace
