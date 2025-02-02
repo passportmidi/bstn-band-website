@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("../assets/fonts/NunitoSans-Regular.woff") format("woff"), url("../assets/fonts/NunitoSans-Regular.woff2") format("woff2");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("../assets/fonts/NunitoSans-Medium.woff") format("woff"), url("../assets/fonts/NunitoSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("../assets/fonts/NunitoSans-Bold.woff") format("woff"), url("../assets/fonts/NunitoSans-Bold.woff2") format("woff2");
+  font-weight: bold;
+}
+.stack--hero {
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: var(--padding);
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/images/hero-shows.jpg");
+}
+
+.hero__subheading {
+  padding: 0;
+}
+@media (max-width: 767px) {
+  .hero__subheading {
+    font-weight: normal;
+  }
+}
+@media (min-width: 768px) {
+  .hero__iframe-container {
+    width: 50%;
+  }
+}
+@media (max-width: 767px) {
+  .hero__iframe-container {
+    width: 100%;
+  }
+}/*# sourceMappingURL=shows.css.map */

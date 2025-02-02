@@ -1,0 +1,32 @@
+@use "./partials/fonts" as *;
+@use "./partials/mixins" as *;
+@use "./partials/colors" as *;
+
+.stack {
+  &--hero {
+    height: fit-content;
+    padding: var(--padding);
+    background-image: linear-gradient(
+        rgba(50, 50, 50, 0.5),
+        rgba(50, 50, 50, 0.5)
+      ),
+      url("../assets/images/hero-shows.jpg");
+  }
+}
+
+.hero {
+  &__subheading {
+    padding: 0;
+    @include mobile {
+      font-weight: normal;
+    }
+  }
+  &__iframe-container {
+    @include desktop-tablet {
+        width: 50%;
+    }
+    @include mobile {
+        width: 100%;
+    }
+  }
+}
