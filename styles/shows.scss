@@ -5,20 +5,36 @@
 .stack {
   &--hero {
     height: fit-content;
-    padding: var(--padding);
+    padding-top: var(--padding);
+    padding-bottom: var(--padding);
     background-image: linear-gradient(
         rgba(50, 50, 50, 0.5),
         rgba(50, 50, 50, 0.5)
       ),
       url("../assets/images/hero-shows.jpg");
+    @include desktop {
+        height: 70vh;
+    }
+    @include mobile-tablet {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
   }
 }
 
 .hero {
+  &__heading--page {
+    padding-top: 0;
+  }
   &__subheading {
-    padding: 0;
+    padding-bottom: 1rem;
     @include mobile {
       font-weight: normal;
+    }
+  }
+  &__song {
+    @include desktop {
+        @include display(flex, center, start, row);
     }
   }
   &__iframe-container {

@@ -16,16 +16,39 @@
 .stack--hero {
   height: -moz-fit-content;
   height: fit-content;
-  padding: var(--padding);
+  padding-top: var(--padding);
+  padding-bottom: var(--padding);
   background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/images/hero-shows.jpg");
 }
+@media (min-width: 1280px) {
+  .stack--hero {
+    height: 70vh;
+  }
+}
+@media (max-width: 1279px) {
+  .stack--hero {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
 
+.hero__heading--page {
+  padding-top: 0;
+}
 .hero__subheading {
-  padding: 0;
+  padding-bottom: 1rem;
 }
 @media (max-width: 767px) {
   .hero__subheading {
     font-weight: normal;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__song {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: row;
   }
 }
 @media (min-width: 768px) {
