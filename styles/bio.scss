@@ -24,6 +24,7 @@ body {
 
 .label,
 .button {
+  color: $silver;
   line-height: 1.25rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -296,8 +297,6 @@ body {
     @include display(flex, center, left, column);
   }
   &__label {
-    color: $silver;
-    text-transform: uppercase;
     font-size: 0.75rem;
   }
   @include desktop-tablet {

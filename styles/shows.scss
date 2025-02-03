@@ -13,11 +13,16 @@
       ),
       url("../assets/images/hero-shows.jpg");
     @include desktop {
-        height: 70vh;
+      height: 70vh;
     }
     @include mobile-tablet {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  }
+  &--shows {
+    @include desktop {
+      @include display(flex, space-between, baseline, row);
     }
   }
 }
@@ -34,15 +39,85 @@
   }
   &__song {
     @include desktop {
-        @include display(flex, center, start, row);
+      @include display(flex, center, start, row);
     }
   }
   &__iframe-container {
     @include desktop-tablet {
-        width: 50%;
+      width: 50%;
     }
     @include mobile {
-        width: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.shows__section div:first-child p:nth-of-type(2) {
+  font-weight: bold;
+}
+
+#showsContainer:last-child {
+  border-bottom: 0.0625rem solid $mercury;
+  @include mobile {
+    margin-bottom: 1rem;
+  }
+  @include desktop-tablet {
+    margin-bottom: 2.25rem;
+  }
+}
+
+@include mobile {
+  .shows {
+    &__info,
+    &__button {
+      margin: 0.5rem 0;
+    }
+    &__button {
+      width: 100%;
+    }
+    &__section {
+      padding: 0.5rem 0;
+      border-top: 0.0625rem solid $mercury;
+    }
+  }
+}
+
+@include desktop-tablet {
+  .shows {
+    &__heading--section {
+      flex: 0;
+      margin-right: 5rem;
+    }
+    &__container {
+      flex: 1;
+    }
+    &__section {
+      padding: 0.5rem 0;
+      border-bottom: 0.0625rem solid $mercury;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-content: start;
+      align-items: center;
+      &:first-child {
+        & .shows__info-value {
+          padding-bottom: 1rem;
+        }
+        & .shows__button-container {
+          align-self: end;
+        }
+      }
+      &:nth-of-type(n + 2) .label {
+        display: none;
+      }
+    }
+    &__button {
+      width: fit-content;
+      &-container {
+        text-align: right;
+      }
+    }
+    &__info-label {
+      padding-bottom: 2.25rem;
     }
   }
 }

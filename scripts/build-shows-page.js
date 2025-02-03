@@ -33,22 +33,24 @@ const shows = [
 
 function displayShow(show) {
   const section = createContainer("shows__section");
-  showStack.append(section);
+  showsContainer.append(section);
 
   for (const [key, value] of Object.entries(show)) {
     const info = createContainer("shows__info");
-    const heading = createElementWithText("p", "shows__info-heading", key);
+    const label = createElementWithText("p", "label shows__info-label", key);
     const val = createElementWithText("p", "shows__info-value", value);
 
-    info.append(heading);
+    info.append(label);
     info.append(val);
 
     section.append(info);
   }
 
-  const button = createElementWithText("button", "button button__shows", "Buy Tickets");
-  section.append(button);
-  
+  const buttonContainer = createContainer("shows__button-container");
+  const button = createElementWithText("button", "button shows__button", "Buy Tickets");
+  buttonContainer.append(button);
+  section.append(buttonContainer);
+
   console.log(section);
 }
 
