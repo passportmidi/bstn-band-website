@@ -1,0 +1,7 @@
+#Ignore design package folder
+BandSite-Package-Sprint-1/
+BandSite-Package-Sprint-2/
+
+#Ignore scss map files
+*.css.map
+*.code-workspace

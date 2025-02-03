@@ -6,20 +6,46 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 body {
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: normal;
   color: $bandsite-black;
-  --headline-padding: 48px;
-  --padding: 36px;
+  --headline-padding: 3rem;
+  --padding: 2.25rem;
 
   @include mobile {
-    --headline-padding: 24px;
-    --padding: 16px;
+    --headline-padding: 1.5rem;
+    --padding: 1rem;
   }
+}
+
+.label,
+.button {
+  color: $silver;
+  line-height: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.label {
+  @include desktop-tablet {
+    font-size: 0.75rem;
+  }
+  @include mobile {
+    font-size: 0.625rem;
+  }
+}
+
+.button {
+  font-size: 1.125rem;
+  background-color: $bandsite-black;
+  color: $white;
+  border-radius: 0.25rem;
+  padding: 1rem 2.25rem;
+  border: none;
 }
 
 .stack {
@@ -44,8 +70,12 @@ body {
     background-position: center;
     background-size: cover;
   }
-  &--about {
+  &--about,
+  &--comments {
     background-color: $white;
+  }
+  &--comments {
+    padding-bottom: var(--padding);
   }
   &--gallery {
     background-color: $alabaster;
@@ -54,7 +84,7 @@ body {
     position: relative;
   }
   @include desktop {
-    padding: 0 126px;
+    padding: 0 7.875rem;
   }
   @include mobile {
     &--header {
@@ -80,9 +110,9 @@ body {
       width: 100%;
     }
     &__logo {
-      padding-top: 36px;
+      padding-top: 2.25rem;
       margin: 0;
-      width: 216px;
+      width: 13.5rem;
     }
   }
 }
@@ -92,7 +122,7 @@ body {
     @include display(flex, space-between, baseline, row);
     list-style-type: none;
     padding: 0 var(--headline-padding);
-    width: 256px;
+    width: 16rem;
   }
   &__item {
     padding: var(--padding) 0;
@@ -100,7 +130,7 @@ body {
     &:active,
     &:hover {
       font-weight: bold;
-      border-bottom: 4px solid $white;
+      border-bottom: 0.25rem solid $white;
     }
   }
   &__link {
@@ -117,39 +147,39 @@ body {
     &__item {
       text-align: center;
       width: stretch;
-      padding: 16px;
+      padding: 1rem;
     }
     &__link {
-      font-size: 24px;
+      font-size: 1.5rem;
     }
   }
 }
 
 .divider {
-  height: 1px;
+  height: 0.0625rem;
   background-color: $mercury;
 }
 
 .heading {
   padding: var(--headline-padding) 0 var(--padding) 0;
   &--page {
-    @include font-properties(60px, 68px, bold);
+    @include font-properties(3.75rem, 4.25rem, bold);
   }
   &--section {
-    @include font-properties(36px, 44px, bold);
+    @include font-properties(2.25rem, 2.75rem, bold);
   }
   &--sub {
-    @include font-properties(24px, 32px, 500);
+    @include font-properties(1.5rem, 2rem, 500);
   }
   @include mobile {
     &--page {
-      @include font-properties(36px, 44px, bold);
+      @include font-properties(2.25rem, 2.75rem, bold);
     }
   }
 }
 
 .about {
-  padding: 0 80px;
+  padding: 0 5rem;
   &__image {
     width: 100%;
     padding-bottom: var(--padding);
@@ -159,7 +189,7 @@ body {
   }
   &__copy {
     width: 48%;
-    @include font-properties(14px, 22px, normal);
+    @include font-properties(0.875rem, 1.375rem, normal);
     padding-bottom: var(--padding);
     &--normal {
       font-weight: normal;
@@ -176,28 +206,28 @@ body {
     &__copy {
       padding: var(--padding) 0;
       width: 100%;
-      @include font-properties(22.4px, 32px, normal);
+      @include font-properties(1.4rem, 2rem, normal);
       &--first {
-        padding-bottom: 36px;
+        padding-bottom: 2.25rem;
       }
       &--second {
-        padding-top: 36px;
+        padding-top: 2.25rem;
       }
     }
   }
 }
 
 .quote {
-  padding: 8px 0;
+  padding: 0.5rem 0;
   &__body {
-    @include font-properties(24px, 32px, bold);
+    @include font-properties(1.5rem, 2rem, bold);
   }
   &__source {
     @include desktop-tablet {
-      @include font-properties(14px, 22px, bold);
+      @include font-properties(0.875rem, 1.375rem, bold);
     }
     @include mobile {
-      @include font-properties(24px, 32px, bold);
+      @include font-properties(1.5rem, 2rem, bold);
     }
   }
 }
@@ -205,7 +235,7 @@ body {
 .gallery {
   @include display(flex, space-between, center, row);
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 1rem;
   padding-bottom: var(--padding);
   @include desktop {
     &__image {
@@ -219,7 +249,7 @@ body {
   }
   @include desktop-tablet {
     &__image {
-      max-width: calc(33.33% - 16px);
+      max-width: calc(33.33% - 1rem);
     }
   }
   @include mobile {
@@ -230,12 +260,104 @@ body {
   }
 }
 
+.form {
+  @include display(flex, center, stretch, column);
+  flex: 1;
+  &__container {
+    @include display(flex, center, start, row);
+  }
+  &__avatar {
+    margin-top: 2.25rem;
+    background-image: url(../assets/images/Mohan-muruge.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  &__input {
+    border-radius: 0.25rem;
+    font-family: "Nunito Sans", sans-serif;
+    padding: 1rem;
+    border: 0.0625rem solid $mercury;
+    background-color: $alabaster;
+    &-comment {
+      height: 5rem;
+      resize: none;
+    }
+    &::placeholder {
+      color: $bandsite-black;
+    }
+    &::active {
+      border: 0.0625rem solid $bandsite-black;
+    }
+  }
+  &__section,
+  &__button {
+    margin: 1rem 0;
+  }
+  &__section {
+    @include display(flex, center, left, column);
+  }
+  &__label {
+    font-size: 0.75rem;
+  }
+  @include desktop-tablet {
+    &__container {
+      padding: 0 5rem;
+    }
+    &__button {
+      align-self: flex-end;
+    }
+  }
+}
+
+.comment {
+  &__area {
+    @include display(flex, left, start, row);
+    padding: var(--padding) 0;
+    border-top: 0.0625rem solid $mercury;
+    &:last-child {
+      border-bottom: 0.0625rem solid $mercury;
+    }
+  }
+  &__body {
+    width: 100%;
+  }
+  &__header {
+    @include display(flex, space-between, center, row);
+    margin-bottom: 0.5rem;
+  }
+  &__user {
+    font-weight: bold;
+  }
+  &__date {
+    color: $silver;
+  }
+  @include desktop-tablet {
+    &__container {
+      padding: 0 5rem var(--padding) 5rem;
+    }
+    @include mobile {
+      &__container {
+        padding-bottom: var(--padding);
+      }
+    }
+  }
+}
+
+.avatar {
+  background-color: $mercury;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  flex: none;
+  margin-right: 1rem;
+}
+
 .footer {
   &__contact {
     @include display(flex, space-between, baseline, row);
   }
   &__copy {
-    @include font-properties(14px, 20px, normal);
+    @include font-properties(0.875rem, 1.25rem, normal);
     padding-bottom: var(--padding);
     &--normal {
       font-weight: normal;
@@ -253,7 +375,7 @@ body {
   }
   &__socials {
     @include display(flex, space-between, baseline, row);
-    width: 112px;
+    width: 7rem;
   }
   &__link {
     text-decoration: none;
@@ -264,7 +386,7 @@ body {
   }
   @include desktop-tablet {
     &__logo {
-      padding-top: 64px;
+      padding-top: 4rem;
       position: absolute;
       top: 0%;
       left: 80%;
@@ -284,7 +406,7 @@ body {
       padding: var(--padding) 0;
     }
     &__copy {
-      @include font-properties(22.4px, 32px, normal);
+      @include font-properties(1.4rem, 2rem, normal);
       &--bold {
         font-weight: bold;
       }
@@ -294,15 +416,15 @@ body {
       @include display(flex, space-between, center, row);
     }
     &__icon {
-      height: 36px;
+      height: 2.25rem;
     }
     &__copyright {
       @include display(flex, center, start, column);
-      padding-top: 64px;
-      padding-bottom: 36px;
+      padding-top: 4rem;
+      padding-bottom: 2.25rem;
     }
     &__logo {
-      width: 216px;
+      width: 13.5rem;
     }
   }
 }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./styles/bio.css" rel="stylesheet" />
+    <script src="./scripts/index-page.js" defer></script>
     <title>BandSite</title>
   </head>
   <body>
@@ -18,10 +19,10 @@
         <nav class="navigation">
           <ul class="navigation__list">
             <li class="navigation__item navigation__item--selected">
-              <a href="index.html" class="navigation__link">Biography</a>
+              <a href="./index.html" class="navigation__link">Biography</a>
             </li>
             <li class="navigation__item">
-              <a href="index.html" class="navigation__link">Shows</a>
+              <a href="./pages/shows.html" class="navigation__link">Shows</a>
             </li>
           </ul>
         </nav>
@@ -91,18 +92,22 @@
           <img
             class="gallery__image"
             src="./assets/images/Photo-gallery-1.jpg"
+            alt="Crowd at Bees Knees concert"
           />
           <img
             class="gallery__image"
             src="./assets/images/Photo-gallery-2.jpg"
+            alt="Person celebrating at concert"
           />
           <img
             class="gallery__image"
             src="./assets/images/Photo-gallery-3.jpg"
+            alt="Hands in the air at concert"
           />
           <img
             class="gallery__image"
             src="./assets/images/Photo-gallery-4.jpg"
+            alt="Person celebrating at concert"
           />
           <img
             class="gallery__image"
@@ -111,19 +116,57 @@
           <img
             class="gallery__image"
             src="./assets/images/Photo-gallery-6.jpg"
+            alt="Confetti falling on crowd at concert"
           />
           <img
             class="gallery__image"
             src="./assets/images/Photo-gallery-7.jpg"
+            alt="Confetti falling on crowd at concert"
           />
           <img
             class="gallery__image"
             src="./assets/images/Photo-gallery-8.jpg"
+            alt="DJ turntable"
           />
           <img
             class="gallery__image"
             src="./assets/images/Photo-gallery-9.jpg"
+            alt="Confetti falling on crowd at concert"
           />
+        </section>
+      </section>
+      <section class="stack stack--comments">
+        <h2 class="heading heading--section form__heading--section">
+          Join the Conversation
+        </h2>
+        <section class="form__container">
+          <div class="avatar form__avatar"></div>
+          <form id="commentForm" class="form">
+            <div class="form__section">
+              <label for="nameInput" class="label form__label"> Name</label>
+              <input
+                type="text"
+                id="nameInput"
+                class="form__input form__input-name"
+                name="nameInput"
+                placeholder="Enter your name"
+              />
+            </div>
+            <div class="form__section">
+              <label for="commentInput" class="label form__label">
+                Comment</label
+              >
+              <textarea
+                id="commentInput"
+                class="form__input form__input-comment"
+                name="commentInput"
+                placeholder="Add a new comment"
+              ></textarea>
+            </div>
+            <button class="button form__button" type="submit">Comment</button>
+          </form>
+        </section>
+        <section id="commentContainer" class="comment__container">
         </section>
       </section>
     </main>
