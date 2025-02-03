@@ -116,6 +116,9 @@
     justify-content: start;
     align-items: center;
   }
+  .shows__section:hover {
+    background-color: #fafafa;
+  }
   .shows__section:first-child .shows__info-value {
     padding-bottom: 1rem;
   }

@@ -51,6 +51,12 @@ function displayShow(show) {
   buttonContainer.append(button);
   section.append(buttonContainer);
 
+  section.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    section.style.backgroundColor = "#e1e1e1";
+  });
+
   console.log(section);
 }
 

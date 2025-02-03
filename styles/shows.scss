@@ -98,6 +98,9 @@
       grid-template-columns: repeat(4, 1fr);
       justify-content: start;
       align-items: center;
+      &:hover {
+        background-color: $alabaster;
+      }
       &:first-child {
         & .shows__info-value {
           padding-bottom: 1rem;
