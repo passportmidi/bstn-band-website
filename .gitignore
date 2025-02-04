@@ -1,6 +1,7 @@
 #Ignore design package folder
-BandSite-Package-Sprint-1/
-BandSite-Package-Sprint-2/
+BandSite-Package-Sprint-*/
+#Ignore student transcript
+Sydney\ Putnam\ \[838595\]\ Student\ Transcript\ -\ Software\ Engineering\ Bootcamp-1.pdf
 
 #Ignore scss map files
 *.css.map
