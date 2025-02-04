@@ -56,8 +56,6 @@ function displayShow(show) {
 
     section.style.backgroundColor = "#e1e1e1";
   });
-
-  console.log(section);
 }
 
 function createElementWithText(type, className, text) {
@@ -74,8 +72,3 @@ function createContainer(className) {
 }
 
 shows.forEach(displayShow);
-
-//date
-//venue
-//location
-//button
