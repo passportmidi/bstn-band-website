@@ -38,7 +38,11 @@ function displayShow(show) {
   for (const [key, value] of Object.entries(show)) {
     const info = createContainer("shows__info");
     const label = createElementWithText("p", "label shows__info-label", key);
-    const val = createElementWithText("p", "shows__info-value", value);
+    const val = createElementWithText(
+      "p",
+      "shows__info-value shows__table-cell",
+      value
+    );
 
     info.append(label);
     info.append(val);
@@ -46,29 +50,71 @@ function displayShow(show) {
     section.append(info);
   }
 
-  const buttonContainer = createContainer("shows__button-container");
-  const button = createElementWithText("button", "button shows__button", "Buy Tickets");
+  const buttonSection = createContainer("shows__info");
+  const buttonContainer = createContainer(
+    "button__container shows__table-cell"
+  );
+  const button = createElementWithText(
+    "button",
+    "button shows__button",
+    "Buy Tickets"
+  );
+  const divider = createElementWithText(
+    "div",
+    "label shows__info-label button__label",
+    "button"
+  );
+
+  function createElementWithText(type, className, text) {
+    const el = document.createElement(type);
+    el.className = className;
+    el.textContent = text;
+    return el;
+  }
+  
+  function createContainer(className) {
+    const container = document.createElement("div");
+    container.className = className;
+    return container;
+  }
+
+  buttonSection.append(divider);
   buttonContainer.append(button);
-  section.append(buttonContainer);
+  buttonSection.append(buttonContainer);
+  section.append(buttonSection);
 
   section.addEventListener("click", (e) => {
     e.preventDefault();
 
-    section.style.backgroundColor = "#e1e1e1";
+    for (const container of showsContainer.getElementsByClassName(
+      "shows__table-cell"
+    )) {
+      container.classList.remove("shows__table-cell--active");
+    }
+
+    for (const container of section.getElementsByClassName(
+      "shows__table-cell"
+    )) {
+      container.classList.add("shows__table-cell--active");
+    }
+  });
+  section.addEventListener("mouseover", (e) => {
+    e.preventDefault();
+
+    for (const container of showsContainer.getElementsByClassName(
+      "shows__table-cell"
+    )) {
+      container.classList.remove("shows__table-cell--hover");
+    }
+
+    for (const container of section.getElementsByClassName(
+      "shows__table-cell"
+    )) {
+      container.classList.add("shows__table-cell--hover");
+    }
   });
 }
 
-function createElementWithText(type, className, text) {
-  const el = document.createElement(type);
-  el.className = className;
-  el.textContent = text;
-  return el;
-}
-
-function createContainer(className) {
-    const container = document.createElement("div");
-    container.className = className;
-    return container;
-}
-
 shows.forEach(displayShow);
+
+
