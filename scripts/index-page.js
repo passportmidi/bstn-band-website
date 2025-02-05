@@ -83,7 +83,7 @@ form.addEventListener("submit", (e) => {
     content: e.target.commentInput.value,
   };
 
-  comments.push(comment);
+  comments.unshift(comment);
   render();
   form.reset();
 });
