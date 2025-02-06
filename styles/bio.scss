@@ -46,6 +46,9 @@ body {
   border-radius: 0.25rem;
   padding: 1rem 2.25rem;
   border: none;
+  &:hover {
+    background-color: black;
+  }
 }
 
 .stack {
