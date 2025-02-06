@@ -85,6 +85,9 @@ body {
   }
   @include desktop {
     padding: 0 7.875rem;
+    &--comments {
+      @include display(flex, center, center, column);
+    }
   }
   @include mobile {
     &--header {
@@ -307,6 +310,11 @@ body {
       align-self: flex-end;
     }
   }
+  @include desktop {
+    &__heading--section {
+      align-self: start;
+    }
+  }
 }
 
 .comment {
@@ -339,6 +347,11 @@ body {
       &__container {
         padding-bottom: var(--padding);
       }
+    }
+  }
+  @include desktop {
+    &__section {
+      width: 60%;
     }
   }
 }

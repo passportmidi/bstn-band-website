@@ -101,6 +101,12 @@ body {
   .stack {
     padding: 0 7.875rem;
   }
+  .stack--comments {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 @media (max-width: 767px) {
   .stack--header {
@@ -382,6 +388,11 @@ body {
     align-self: flex-end;
   }
 }
+@media (min-width: 1280px) {
+  .form__heading--section {
+    align-self: start;
+  }
+}
 
 .comment__area {
   display: flex;
@@ -418,6 +429,11 @@ body {
 @media (min-width: 768px) and (max-width: 767px) {
   .comment__container {
     padding-bottom: var(--padding);
+  }
+}
+@media (min-width: 1280px) {
+  .comment__section {
+    width: 60%;
   }
 }
 
