@@ -1,7 +1,12 @@
-import getComments from './band-site-api.js';
+import getComments from "./band-site-api.js";
 
-// Comment generation
-getComments();
+// // Comment generation
+// const commentData = await getComments();
+// console.log(commentData);
+
+getComments().then((result) => {
+  console.log(result);
+});
 
 const comments = [
   {

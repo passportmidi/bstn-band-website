@@ -5,7 +5,7 @@ export default async function getComments() {
     try {
         const resp = await axios.get(`${BASE_URL}/comments?api_key=${API_KEY}`);
         const comments = resp.data;
-        console.log(comments);
+        return comments;
     }
     catch (e) {
         console.log(e);
