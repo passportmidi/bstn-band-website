@@ -1,4 +1,7 @@
+import getComments from './band-site-api.js';
+
 // Comment generation
+getComments();
 
 const comments = [
   {

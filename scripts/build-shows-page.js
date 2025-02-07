@@ -116,5 +116,3 @@ function displayShow(show) {
 }
 
 shows.forEach(displayShow);
-
-
