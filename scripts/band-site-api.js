@@ -11,3 +11,13 @@ export default async function getComments() {
         console.log(e);
     }
 }
+
+export async function postComment(comment) {
+    try {
+        const resp = await axios.post(`${BASE_URL}/comments?api_key=${API_KEY}`, comment);
+        return resp;
+    }
+    catch (e) {
+        console.log(e); 
+    }
+}

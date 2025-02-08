@@ -1,4 +1,4 @@
-import getComments from "./band-site-api.js";
+import getComments, {postComment} from "./band-site-api.js";
 
 function displayComment(comment) {
   const area = createElementWithClass("div", "comment__area");
@@ -65,19 +65,12 @@ const form = document.getElementById("commentForm");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  let today = new Date();
-
   const comment = {
-    user: e.target.nameInput.value,
-    date: new Intl.DateTimeFormat("en-US", {
-      month: "2-digit",
-      day: "2-digit",
-      year: "numeric",
-    }).format(today),
-    content: e.target.commentInput.value,
+    name: e.target.nameInput.value,
+    comment: e.target.commentInput.value,
   };
 
-  comments.unshift(comment);
-  render();
+  postComment(comment).then(render());
+
   form.reset();
 });
