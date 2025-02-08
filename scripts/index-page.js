@@ -1,4 +1,4 @@
-import getComments, { postComment } from "./band-site-api.js";
+import getItems, { postComment, timestampToDate } from "./band-site-api.js";
 
 function displayComment(comment) {
   const area = createElementWithClass("div", "comment__area");
@@ -39,19 +39,9 @@ function createParagraph(className, text) {
   return par;
 }
 
-function timestampToDate(timestamp) {
-  const date = new Date(timestamp);
-  const formattedDate = new Intl.DateTimeFormat("en-US", {
-    month: "2-digit",
-    day: "2-digit",
-    year: "numeric",
-  }).format(date);
-  return formattedDate;
-}
-
 function render() {
   commentContainer.replaceChildren();
-  getComments().then((commentList) => {
+  getItems("comments").then((commentList) => {
     commentList.forEach((comment) => displayComment(comment));
   });
 }
@@ -73,7 +63,7 @@ form.addEventListener("submit", (e) => {
   postComment(comment).then(
     setTimeout(() => {
       render();
-    }, 500)
+    }, 1000)
   );
 
   form.reset();

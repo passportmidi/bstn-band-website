@@ -1,53 +1,27 @@
-const shows = [
-  {
-    date: "Mon Sept 09 2024",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 17 2024",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Oct 12 2024",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 16 2024",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 29 2024",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 18 2024",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+import getItems, { timestampToDate } from "./band-site-api.js";
 
 function displayShow(show) {
   const section = createContainer("shows__section");
   showsContainer.append(section);
 
-  for (const [key, value] of Object.entries(show)) {
-    const info = createContainer("shows__info");
-    const label = createElementWithText("p", "label shows__info-label", key);
-    const val = createElementWithText(
-      "p",
-      "shows__info-value shows__table-cell",
-      value
-    );
-
-    info.append(label);
-    info.append(val);
-
-    section.append(info);
+  for (let [key, value] of Object.entries(show)) {
+    if (key !== 'id') {
+      const info = createContainer("shows__info");
+      const label = createElementWithText("p", "label shows__info-label", key);
+      if (key === 'date') {
+        value = timestampToDate(value);
+      }
+      const val = createElementWithText(
+        "p",
+        "shows__info-value shows__table-cell",
+        value
+      );
+  
+      info.append(label);
+      info.append(val);
+  
+      section.append(info);
+    }
   }
 
   const buttonSection = createContainer("shows__info");
@@ -115,4 +89,6 @@ function displayShow(show) {
   });
 }
 
-shows.forEach(displayShow);
+getItems('showdates').then((showsList) => {
+    showsList.forEach((show) => displayShow(show));
+  });
