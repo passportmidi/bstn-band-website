@@ -1,4 +1,4 @@
-import getComments, {postComment} from "./band-site-api.js";
+import getComments, { postComment } from "./band-site-api.js";
 
 function displayComment(comment) {
   const area = createElementWithClass("div", "comment__area");
@@ -70,7 +70,11 @@ form.addEventListener("submit", (e) => {
     comment: e.target.commentInput.value,
   };
 
-  postComment(comment).then(render());
+  postComment(comment).then(
+    setTimeout(() => {
+      render();
+    }, 500)
+  );
 
   form.reset();
 });

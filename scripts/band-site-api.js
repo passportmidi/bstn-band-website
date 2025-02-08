@@ -5,7 +5,10 @@ export default async function getComments() {
     try {
         const resp = await axios.get(`${BASE_URL}/comments?api_key=${API_KEY}`);
         const comments = resp.data;
-        return comments;
+        const sortedComments = comments.sort((c1, c2) => {
+            return c2.timestamp - c1.timestamp;
+        });
+        return sortedComments;
     }
     catch (e) {
         console.log(e);
