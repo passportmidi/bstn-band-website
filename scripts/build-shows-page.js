@@ -5,10 +5,10 @@ function displayShow(show) {
   showsContainer.append(section);
 
   for (let [key, value] of Object.entries(show)) {
-    if (key !== 'id') {
+    if (key !== "id") {
       const info = createContainer("shows__info");
       const label = createElementWithText("p", "label shows__info-label", key);
-      if (key === 'date') {
+      if (key === "date") {
         value = timestampToDate(value);
       }
       const val = createElementWithText(
@@ -16,10 +16,10 @@ function displayShow(show) {
         "shows__info-value shows__table-cell",
         value
       );
-  
+
       info.append(label);
       info.append(val);
-  
+
       section.append(info);
     }
   }
@@ -45,7 +45,7 @@ function displayShow(show) {
     el.textContent = text;
     return el;
   }
-  
+
   function createContainer(className) {
     const container = document.createElement("div");
     container.className = className;
@@ -89,6 +89,6 @@ function displayShow(show) {
   });
 }
 
-getItems('showdates').then((showsList) => {
-    showsList.forEach((show) => displayShow(show));
-  });
+getItems("showdates").then((showsList) => {
+  showsList.forEach((show) => displayShow(show));
+});
