@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./styles/bio.css" rel="stylesheet" />
-    <script src="./scripts/index-page.js" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./scripts/index-page.js" type="module" defer></script>
     <title>BandSite</title>
   </head>
   <body>
@@ -139,34 +140,35 @@
         <h2 class="heading heading--section form__heading--section">
           Join the Conversation
         </h2>
-        <section class="form__container">
-          <div class="avatar form__avatar"></div>
-          <form id="commentForm" class="form">
-            <div class="form__section">
-              <label for="nameInput" class="label form__label"> Name</label>
-              <input
-                type="text"
-                id="nameInput"
-                class="form__input form__input-name"
-                name="nameInput"
-                placeholder="Enter your name"
-              />
-            </div>
-            <div class="form__section">
-              <label for="commentInput" class="label form__label">
-                Comment</label
-              >
-              <textarea
-                id="commentInput"
-                class="form__input form__input-comment"
-                name="commentInput"
-                placeholder="Add a new comment"
-              ></textarea>
-            </div>
-            <button class="button form__button" type="submit">Comment</button>
-          </form>
-        </section>
-        <section id="commentContainer" class="comment__container">
+        <section class="comment__section">
+          <section class="form__container">
+            <div class="avatar form__avatar"></div>
+            <form id="commentForm" class="form">
+              <div class="form__section">
+                <label for="nameInput" class="label form__label"> Name</label>
+                <input
+                  type="text"
+                  id="nameInput"
+                  class="form__input form__input-name"
+                  name="nameInput"
+                  placeholder="Enter your name"
+                />
+              </div>
+              <div class="form__section">
+                <label for="commentInput" class="label form__label">
+                  Comment</label
+                >
+                <textarea
+                  id="commentInput"
+                  class="form__input form__input-comment"
+                  name="commentInput"
+                  placeholder="Add a new comment"
+                ></textarea>
+              </div>
+              <button class="button form__button" type="submit">Comment</button>
+            </form>
+          </section>
+          <section id="commentContainer" class="comment__container"></section>
         </section>
       </section>
     </main>

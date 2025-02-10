@@ -1,81 +1,94 @@
-const shows = [
-  {
-    date: "Mon Sept 09 2024",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 17 2024",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Oct 12 2024",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 16 2024",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 29 2024",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 18 2024",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+import getItems, { timestampToDate } from "./band-site-api.js";
 
 function displayShow(show) {
   const section = createContainer("shows__section");
   showsContainer.append(section);
 
-  for (const [key, value] of Object.entries(show)) {
-    const info = createContainer("shows__info");
-    const label = createElementWithText("p", "label shows__info-label", key);
-    const val = createElementWithText("p", "shows__info-value", value);
+  for (let [key, value] of Object.entries(show)) {
+    if (key !== "id") {
+      const info = createContainer("shows__info");
+      const label = createElementWithText("p", "label shows__info-label", key);
+      if (key === "date") {
+        value = timestampToDate(value);
+      }
+      const val = createElementWithText(
+        "p",
+        "shows__info-value shows__table-cell",
+        value
+      );
 
-    info.append(label);
-    info.append(val);
+      info.append(label);
+      info.append(val);
 
-    section.append(info);
+      section.append(info);
+    }
   }
 
-  const buttonContainer = createContainer("shows__button-container");
-  const button = createElementWithText("button", "button shows__button", "Buy Tickets");
+  const buttonSection = createContainer("shows__info");
+  const buttonContainer = createContainer(
+    "button__container shows__table-cell"
+  );
+  const button = createElementWithText(
+    "button",
+    "button shows__button",
+    "Buy Tickets"
+  );
+  const divider = createElementWithText(
+    "div",
+    "label shows__info-label button__label",
+    "button"
+  );
+
+  function createElementWithText(type, className, text) {
+    const el = document.createElement(type);
+    el.className = className;
+    el.textContent = text;
+    return el;
+  }
+
+  function createContainer(className) {
+    const container = document.createElement("div");
+    container.className = className;
+    return container;
+  }
+
+  buttonSection.append(divider);
   buttonContainer.append(button);
-  section.append(buttonContainer);
+  buttonSection.append(buttonContainer);
+  section.append(buttonSection);
 
   section.addEventListener("click", (e) => {
     e.preventDefault();
 
-    section.style.backgroundColor = "#e1e1e1";
+    for (const container of showsContainer.getElementsByClassName(
+      "shows__table-cell"
+    )) {
+      container.classList.remove("shows__table-cell--active");
+    }
+
+    for (const container of section.getElementsByClassName(
+      "shows__table-cell"
+    )) {
+      container.classList.add("shows__table-cell--active");
+    }
   });
+  section.addEventListener("mouseover", (e) => {
+    e.preventDefault();
 
-  console.log(section);
+    for (const container of showsContainer.getElementsByClassName(
+      "shows__table-cell"
+    )) {
+      container.classList.remove("shows__table-cell--hover");
+    }
+
+    for (const container of section.getElementsByClassName(
+      "shows__table-cell"
+    )) {
+      container.classList.add("shows__table-cell--hover");
+    }
+  });
 }
 
-function createElementWithText(type, className, text) {
-  const el = document.createElement(type);
-  el.className = className;
-  el.textContent = text;
-  return el;
-}
-
-function createContainer(className) {
-    const container = document.createElement("div");
-    container.className = className;
-    return container;
-}
-
-shows.forEach(displayShow);
-
-//date
-//venue
-//location
-//button
+getItems("showdates").then((showsList) => {
+  showsList.forEach((show) => displayShow(show));
+});

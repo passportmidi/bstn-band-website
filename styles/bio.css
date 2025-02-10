@@ -13,94 +13,13 @@
   src: url("../assets/fonts/NunitoSans-Bold.woff") format("woff"), url("../assets/fonts/NunitoSans-Bold.woff2") format("woff2");
   font-weight: bold;
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Nunito Sans", sans-serif;
-}
-
-body {
-  font-size: 16px;
-  font-weight: normal;
-  color: #323232;
-  --headline-padding: 3rem;
-  --padding: 2.25rem;
-}
-@media (max-width: 767px) {
-  body {
-    --headline-padding: 1.5rem;
-    --padding: 1rem;
-  }
-}
-
-.label,
-.button {
-  color: #afafaf;
-  line-height: 1.25rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-@media (min-width: 768px) {
-  .label {
-    font-size: 0.75rem;
-  }
-}
-@media (max-width: 767px) {
-  .label {
-    font-size: 0.625rem;
-  }
-}
-
-.button {
-  font-size: 1.125rem;
-  background-color: #323232;
-  color: #fff;
-  border-radius: 0.25rem;
-  padding: 1rem 2.25rem;
-  border: none;
-}
-
-.stack {
-  padding: 0 var(--padding);
-}
-.stack--header, .stack--hero, .stack--footer {
-  background-color: #323232;
-  color: #fff;
-}
 .stack--header {
   display: flex;
   justify-content: left;
   align-items: center;
   flex-direction: row;
-}
-.stack--hero {
-  display: flex;
-  justify-content: center;
-  align-items: left;
-  flex-direction: column;
-  height: 50vh;
-  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/images/hero-bio.jpg");
-  background-position: center;
-  background-size: cover;
-}
-.stack--about, .stack--comments {
-  background-color: #fff;
-}
-.stack--comments {
-  padding-bottom: var(--padding);
-}
-.stack--gallery {
-  background-color: #fafafa;
-}
-.stack--footer {
-  position: relative;
-}
-@media (min-width: 1280px) {
-  .stack {
-    padding: 0 7.875rem;
-  }
+  background-color: #323232;
+  color: #fff;
 }
 @media (max-width: 767px) {
   .stack--header {
@@ -109,9 +28,6 @@ body {
     align-items: center;
     flex-direction: column;
     padding: 0;
-  }
-  .stack--hero {
-    height: 35vh;
   }
 }
 
@@ -183,6 +99,200 @@ body {
 .divider {
   height: 0.0625rem;
   background-color: #e1e1e1;
+}
+
+.stack--footer {
+  background-color: #323232;
+  color: #fff;
+  position: relative;
+}
+
+.footer__contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-direction: row;
+}
+.footer__copy {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: normal;
+  padding-bottom: var(--padding);
+}
+.footer__copy--normal {
+  font-weight: normal;
+}
+.footer__copy--bold {
+  font-weight: bold;
+}
+.footer__title {
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  justify-content: left;
+  align-items: baseline;
+  flex-direction: row;
+}
+.footer__heading--section {
+  padding-right: var(--padding) !important;
+}
+.footer__socials {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-direction: row;
+  width: 7rem;
+}
+.footer__link {
+  text-decoration: none;
+  color: #fff;
+}
+.footer__logo {
+  padding: var(--padding) 0;
+}
+@media (min-width: 768px) {
+  .footer__logo {
+    padding-top: 4rem;
+    position: absolute;
+    top: 0%;
+    left: 80%;
+  }
+}
+@media (max-width: 767px) {
+  .footer__heading--section {
+    padding-right: 0;
+  }
+  .footer__title, .footer__contact {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+  }
+  .footer__title, .footer__socials, .footer__copy {
+    padding: var(--padding) 0;
+  }
+  .footer__copy {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    font-weight: normal;
+  }
+  .footer__copy--bold {
+    font-weight: bold;
+  }
+  .footer__socials {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+  .footer__icon {
+    height: 2.25rem;
+  }
+  .footer__copyright {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    padding-top: 4rem;
+    padding-bottom: 2.25rem;
+  }
+  .footer__logo {
+    width: 13.5rem;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+  font-size: 16px;
+  font-weight: normal;
+  color: #323232;
+  --headline-padding: 3rem;
+  --padding: 2.25rem;
+}
+@media (max-width: 767px) {
+  body {
+    --headline-padding: 1.5rem;
+    --padding: 1rem;
+  }
+}
+
+.label,
+.button {
+  color: #afafaf;
+  line-height: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .label {
+    font-size: 0.75rem;
+  }
+}
+@media (max-width: 767px) {
+  .label {
+    font-size: 0.625rem;
+  }
+}
+
+.button {
+  font-size: 1.125rem;
+  background-color: #323232;
+  color: #fff;
+  border-radius: 0.25rem;
+  padding: 1rem 2.25rem;
+  border: none;
+}
+.button:hover {
+  background-color: black;
+}
+
+.stack {
+  padding: 0 var(--padding);
+}
+.stack--hero {
+  background-color: #323232;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  height: 50vh;
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/images/hero-bio.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.stack--about, .stack--comments {
+  background-color: #fff;
+}
+.stack--comments {
+  padding-bottom: var(--padding);
+}
+.stack--gallery {
+  background-color: #fafafa;
+}
+@media (min-width: 1280px) {
+  .stack {
+    padding: 0 7.875rem;
+  }
+  .stack--comments {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+@media (max-width: 767px) {
+  .stack--hero {
+    height: 35vh;
+  }
 }
 
 .heading {
@@ -382,6 +492,11 @@ body {
     align-self: flex-end;
   }
 }
+@media (min-width: 1280px) {
+  .form__heading--section {
+    align-self: start;
+  }
+}
 
 .comment__area {
   display: flex;
@@ -420,6 +535,11 @@ body {
     padding-bottom: var(--padding);
   }
 }
+@media (min-width: 1280px) {
+  .comment__section {
+    width: 60%;
+  }
+}
 
 .avatar {
   background-color: #e1e1e1;
@@ -428,99 +548,4 @@ body {
   height: 3rem;
   flex: none;
   margin-right: 1rem;
-}
-
-.footer__contact {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  flex-direction: row;
-}
-.footer__copy {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: normal;
-  padding-bottom: var(--padding);
-}
-.footer__copy--normal {
-  font-weight: normal;
-}
-.footer__copy--bold {
-  font-weight: bold;
-}
-.footer__title {
-  width: -moz-max-content;
-  width: max-content;
-  display: flex;
-  justify-content: left;
-  align-items: baseline;
-  flex-direction: row;
-}
-.footer__heading--section {
-  padding-right: var(--padding);
-}
-.footer__socials {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  flex-direction: row;
-  width: 7rem;
-}
-.footer__link {
-  text-decoration: none;
-  color: #fff;
-}
-.footer__logo {
-  padding: var(--padding) 0;
-}
-@media (min-width: 768px) {
-  .footer__logo {
-    padding-top: 4rem;
-    position: absolute;
-    top: 0%;
-    left: 80%;
-  }
-}
-@media (max-width: 767px) {
-  .footer__heading--section {
-    padding-right: 0;
-  }
-  .footer__title, .footer__contact {
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    flex-direction: column;
-  }
-  .footer__title, .footer__socials, .footer__copy {
-    padding: var(--padding) 0;
-  }
-  .footer__copy {
-    font-size: 1.4rem;
-    line-height: 2rem;
-    font-weight: normal;
-  }
-  .footer__copy--bold {
-    font-weight: bold;
-  }
-  .footer__socials {
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-  }
-  .footer__icon {
-    height: 2.25rem;
-  }
-  .footer__copyright {
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    flex-direction: column;
-    padding-top: 4rem;
-    padding-bottom: 2.25rem;
-  }
-  .footer__logo {
-    width: 13.5rem;
-  }
 }/*# sourceMappingURL=bio.css.map */

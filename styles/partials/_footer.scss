@@ -1,0 +1,85 @@
+@use "./mixins" as *;
+@use "./colors" as *;
+
+.stack--footer {
+  background-color: $bandsite-black;
+  color: $white;
+  position: relative;
+}
+
+.footer {
+  &__contact {
+    @include display(flex, space-between, baseline, row);
+  }
+  &__copy {
+    @include font-properties(0.875rem, 1.25rem, normal);
+    padding-bottom: var(--padding);
+    &--normal {
+      font-weight: normal;
+    }
+    &--bold {
+      font-weight: bold;
+    }
+  }
+  &__title {
+    width: max-content;
+    @include display(flex, left, baseline, row);
+  }
+  &__heading--section {
+    padding-right: var(--padding) !important;
+  }
+  &__socials {
+    @include display(flex, space-between, baseline, row);
+    width: 7rem;
+  }
+  &__link {
+    text-decoration: none;
+    color: $white;
+  }
+  &__logo {
+    padding: var(--padding) 0;
+  }
+  @include desktop-tablet {
+    &__logo {
+      padding-top: 4rem;
+      position: absolute;
+      top: 0%;
+      left: 80%;
+    }
+  }
+  @include mobile {
+    &__heading--section {
+      padding-right: 0;
+    }
+    &__title,
+    &__contact {
+      @include display(flex, center, start, column);
+    }
+    &__title,
+    &__socials,
+    &__copy {
+      padding: var(--padding) 0;
+    }
+    &__copy {
+      @include font-properties(1.4rem, 2rem, normal);
+      &--bold {
+        font-weight: bold;
+      }
+    }
+    &__socials {
+      width: 90%;
+      @include display(flex, space-between, center, row);
+    }
+    &__icon {
+      height: 2.25rem;
+    }
+    &__copyright {
+      @include display(flex, center, start, column);
+      padding-top: 4rem;
+      padding-bottom: 2.25rem;
+    }
+    &__logo {
+      width: 13.5rem;
+    }
+  }
+}

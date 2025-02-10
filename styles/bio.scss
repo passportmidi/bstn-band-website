@@ -1,6 +1,8 @@
 @use "./partials/fonts" as *;
 @use "./partials/mixins" as *;
 @use "./partials/colors" as *;
+@use "./partials/header" as *;
+@use "./partials/footer" as *;
 
 * {
   margin: 0;
@@ -46,20 +48,16 @@ body {
   border-radius: 0.25rem;
   padding: 1rem 2.25rem;
   border: none;
+  &:hover {
+    background-color: black;
+  }
 }
 
 .stack {
   padding: 0 var(--padding);
-  &--header,
-  &--hero,
-  &--footer {
+  &--hero {
     background-color: $bandsite-black;
     color: $white;
-  }
-  &--header {
-    @include display(flex, left, center, row);
-  }
-  &--hero {
     @include display(flex, center, left, column);
     height: 50vh;
     background-image: linear-gradient(
@@ -80,84 +78,17 @@ body {
   &--gallery {
     background-color: $alabaster;
   }
-  &--footer {
-    position: relative;
-  }
   @include desktop {
     padding: 0 7.875rem;
+    &--comments {
+      @include display(flex, center, center, column);
+    }
   }
   @include mobile {
-    &--header {
-      @include display(flex, left, center, column);
-      padding: 0;
-    }
     &--hero {
       height: 35vh;
     }
   }
-}
-
-.header {
-  &__contents {
-    display: flex;
-  }
-  &__logo {
-    padding: var(--padding) 0;
-  }
-  @include mobile {
-    &__contents {
-      @include display(flex, left, center, column);
-      width: 100%;
-    }
-    &__logo {
-      padding-top: 2.25rem;
-      margin: 0;
-      width: 13.5rem;
-    }
-  }
-}
-
-.navigation {
-  &__list {
-    @include display(flex, space-between, baseline, row);
-    list-style-type: none;
-    padding: 0 var(--headline-padding);
-    width: 16rem;
-  }
-  &__item {
-    padding: var(--padding) 0;
-    &--selected,
-    &:active,
-    &:hover {
-      font-weight: bold;
-      border-bottom: 0.25rem solid $white;
-    }
-  }
-  &__link {
-    color: $white;
-    text-decoration: none;
-  }
-  @include mobile {
-    width: 100%;
-    &__list {
-      @include display(flex, space-evenly, baseline, row);
-      width: 100%;
-      padding: 0;
-    }
-    &__item {
-      text-align: center;
-      width: stretch;
-      padding: 1rem;
-    }
-    &__link {
-      font-size: 1.5rem;
-    }
-  }
-}
-
-.divider {
-  height: 0.0625rem;
-  background-color: $mercury;
 }
 
 .heading {
@@ -307,6 +238,11 @@ body {
       align-self: flex-end;
     }
   }
+  @include desktop {
+    &__heading--section {
+      align-self: start;
+    }
+  }
 }
 
 .comment {
@@ -341,6 +277,11 @@ body {
       }
     }
   }
+  @include desktop {
+    &__section {
+      width: 60%;
+    }
+  }
 }
 
 .avatar {
@@ -350,81 +291,4 @@ body {
   height: 3rem;
   flex: none;
   margin-right: 1rem;
-}
-
-.footer {
-  &__contact {
-    @include display(flex, space-between, baseline, row);
-  }
-  &__copy {
-    @include font-properties(0.875rem, 1.25rem, normal);
-    padding-bottom: var(--padding);
-    &--normal {
-      font-weight: normal;
-    }
-    &--bold {
-      font-weight: bold;
-    }
-  }
-  &__title {
-    width: max-content;
-    @include display(flex, left, baseline, row);
-  }
-  &__heading--section {
-    padding-right: var(--padding);
-  }
-  &__socials {
-    @include display(flex, space-between, baseline, row);
-    width: 7rem;
-  }
-  &__link {
-    text-decoration: none;
-    color: $white;
-  }
-  &__logo {
-    padding: var(--padding) 0;
-  }
-  @include desktop-tablet {
-    &__logo {
-      padding-top: 4rem;
-      position: absolute;
-      top: 0%;
-      left: 80%;
-    }
-  }
-  @include mobile {
-    &__heading--section {
-      padding-right: 0;
-    }
-    &__title,
-    &__contact {
-      @include display(flex, center, start, column);
-    }
-    &__title,
-    &__socials,
-    &__copy {
-      padding: var(--padding) 0;
-    }
-    &__copy {
-      @include font-properties(1.4rem, 2rem, normal);
-      &--bold {
-        font-weight: bold;
-      }
-    }
-    &__socials {
-      width: 90%;
-      @include display(flex, space-between, center, row);
-    }
-    &__icon {
-      height: 2.25rem;
-    }
-    &__copyright {
-      @include display(flex, center, start, column);
-      padding-top: 4rem;
-      padding-bottom: 2.25rem;
-    }
-    &__logo {
-      width: 13.5rem;
-    }
-  }
 }

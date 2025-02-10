@@ -1,0 +1,75 @@
+@use "./mixins" as *;
+@use "./colors" as *;
+
+.stack--header {
+  @include display(flex, left, center, row);
+  background-color: $bandsite-black;
+  color: $white;
+  @include mobile {
+    @include display(flex, left, center, column);
+    padding: 0;
+  }
+}
+
+.header {
+  &__contents {
+    display: flex;
+  }
+  &__logo {
+    padding: var(--padding) 0;
+  }
+  @include mobile {
+    &__contents {
+      @include display(flex, left, center, column);
+      width: 100%;
+    }
+    &__logo {
+      padding-top: 2.25rem;
+      margin: 0;
+      width: 13.5rem;
+    }
+  }
+}
+
+.navigation {
+  &__list {
+    @include display(flex, space-between, baseline, row);
+    list-style-type: none;
+    padding: 0 var(--headline-padding);
+    width: 16rem;
+  }
+  &__item {
+    padding: var(--padding) 0;
+    &--selected,
+    &:active,
+    &:hover {
+      font-weight: bold;
+      border-bottom: 0.25rem solid $white;
+    }
+  }
+  &__link {
+    color: $white;
+    text-decoration: none;
+  }
+  @include mobile {
+    width: 100%;
+    &__list {
+      @include display(flex, space-evenly, baseline, row);
+      width: 100%;
+      padding: 0;
+    }
+    &__item {
+      text-align: center;
+      width: stretch;
+      padding: 1rem;
+    }
+    &__link {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.divider {
+  height: 0.0625rem;
+  background-color: $mercury;
+}
